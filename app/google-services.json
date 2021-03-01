@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "81094411444",
+    "project_id": "cojeet-a0d71",
+    "storage_bucket": "cojeet-a0d71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81094411444:android:4a3c9bb42dfd1995b0c3e1",
+        "android_client_info": {
+          "package_name": "com.example.cojeet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81094411444-ontvfcpso1hclveihflpbcfe5fvpd7ii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD009CJFMXblMdU_iHXaVoEyVJIYgintto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81094411444-ontvfcpso1hclveihflpbcfe5fvpd7ii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

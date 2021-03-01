@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:padding="16dp"
+    tools:context=".Signup2">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:text="Cojeet"
+            android:textSize="48dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/signuptitle2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/signuptitle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:text="Medical details"
+
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/ed1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+        <EditText
+            android:id="@+id/ed1"
+            android:layout_width="116dp"
+            android:layout_height="36dp"
+
+
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-light"
+            android:hint="Age"
+            android:inputType="text"
+            android:textColor="@color/purple_700"
+            android:textSize="12dp"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+
+            android:textColorLink="@color/purple_700"
+            app:layout_constraintBottom_toTopOf="@+id/ed2"
+            app:layout_constraintEnd_toStartOf="@id/ed4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signuptitle2" />
+
+        <EditText
+            android:id="@+id/ed4"
+            android:layout_width="110dp"
+            android:layout_height="37dp"
+            android:textSize="12dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="sans-serif-light"
+            android:hint="Height(cm)"
+            android:inputType="text"
+            android:textColor="@color/purple_700"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            app:layout_constraintBottom_toTopOf="@+id/ed5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ed1"
+            app:layout_constraintTop_toBottomOf="@+id/signuptitle2" />
+
+        <EditText
+            android:id="@+id/ed2"
+            android:layout_width="118dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="2dp"
+
+            android:fontFamily="sans-serif-light"
+            android:hint="Weight(kg)"
+            android:inputType="text"
+            android:textColor="@color/purple_700"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/ed3"
+            app:layout_constraintEnd_toStartOf="@id/ed5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed1" />
+
+        <EditText
+            android:id="@+id/ed5"
+            android:layout_width="111dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="2dp"
+
+            android:fontFamily="sans-serif-light"
+            android:hint="Corona Status(+/-)"
+            android:inputType="text"
+            android:textColor="@color/purple_700"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/rb1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ed2"
+            app:layout_constraintTop_toBottomOf="@+id/ed1" />
+
+        <EditText
+            android:id="@+id/ed3"
+            android:layout_width="145dp"
+            android:layout_height="36dp"
+            android:fontFamily="sans-serif-light"
+            android:hint="Vaccination Status(Y/N)"
+            android:inputType="text"
+            android:textColor="@color/purple_700"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@id/cb1"
+            app:layout_constraintEnd_toStartOf="@+id/rb1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed2" />
+
+        <RadioGroup
+            android:id="@+id/rb1"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/cb5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ed3"
+            app:layout_constraintTop_toBottomOf="@id/ed5">
+
+            <RadioButton
+                android:id="@+id/rb11"
+                android:layout_width="89dp"
+                android:layout_height="34dp"
+                android:hint="Male"
+                android:textColorHint="#100F0F"
+                android:textSize="12dp" />
+
+            <RadioButton
+                android:id="@+id/rb12"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:hint="Female"
+                android:textColorHint="#100F0F"
+                android:textSize="12dp" />
+        </RadioGroup>
+
+
+        <CheckBox
+            android:id="@+id/cb1"
+            android:layout_width="128dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Fever"
+            android:textSize="12dp"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            app:layout_constraintBottom_toTopOf="@+id/cb2"
+            app:layout_constraintEnd_toStartOf="@id/cb6"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rb1" />
+
+        <CheckBox
+            android:id="@+id/cb6"
+            android:layout_width="128dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Diarrhoea"
+            android:textSize="12dp"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            app:layout_constraintBottom_toTopOf="@+id/cb7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cb1"
+            app:layout_constraintTop_toBottomOf="@+id/rb1"
+    />
+
+        <CheckBox
+            android:id="@+id/cb2"
+            android:layout_width="128dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Dry Cough"
+            android:textColor="#100F0F"
+            android:textSize="12dp"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            app:layout_constraintBottom_toTopOf="@+id/cb3"
+            app:layout_constraintEnd_toStartOf="@id/cb7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb1"
+            />
+
+        <CheckBox
+            android:id="@+id/cb7"
+            android:layout_width="128dp"
+            android:layout_height="35dp"
+
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Conjunctivitis"
+            android:textColor="#100F0F"
+            android:textSize="12dp"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            app:layout_constraintBottom_toTopOf="@+id/cb8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cb2"
+            app:layout_constraintTop_toBottomOf="@+id/cb6" />
+
+        <CheckBox
+            android:id="@+id/cb3"
+            android:layout_width="127dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Tiredness"
+            android:textSize="12dp"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            app:layout_constraintBottom_toTopOf="@+id/cb4"
+            app:layout_constraintEnd_toStartOf="@id/cb8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb2" />
+
+        <CheckBox
+            android:id="@+id/cb8"
+            android:layout_width="128dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Shortness of breath"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/cb9"
+            app:layout_constraintEnd_toEndOf="parent"
+
+
+            app:layout_constraintStart_toEndOf="@id/cb3"
+            app:layout_constraintTop_toBottomOf="@+id/cb7"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <CheckBox
+            android:id="@+id/cb4"
+            android:layout_width="127dp"
+            android:layout_height="37dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Chest Pain"
+            android:textSize="12dp"
+            android:textColor="#100F0F"
+
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            app:layout_constraintBottom_toTopOf="@+id/cb5"
+            app:layout_constraintEnd_toStartOf="@id/cb9"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb3"
+             />
+
+        <CheckBox
+            android:id="@+id/cb9"
+            android:layout_width="124dp"
+            android:layout_height="37dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Aches and Pains"
+            android:textSize="12dp"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            app:layout_constraintBottom_toTopOf="@+id/cb10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cb4"
+            app:layout_constraintTop_toBottomOf="@+id/cb8"
+            />
+
+        <CheckBox
+            android:id="@+id/cb5"
+            android:layout_width="128dp"
+            android:layout_height="35dp"
+
+            android:ems="10"
+            android:textSize="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Sore Throat"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            app:layout_constraintEnd_toStartOf="@id/cb10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb4"
+            app:layout_constraintBottom_toTopOf="@id/signupbutton2"/>
+
+        <CheckBox
+            android:id="@+id/cb10"
+            android:layout_width="122dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Loss of speech or movement"
+            android:textColor="#100F0F"
+            android:textSize="12dp"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cb5"
+            app:layout_constraintTop_toBottomOf="@+id/cb9"
+            />
+
+
+        <Button
+            android:id="@+id/signupbutton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/myback"
+            android:text="Sign Up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb10"
+             />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

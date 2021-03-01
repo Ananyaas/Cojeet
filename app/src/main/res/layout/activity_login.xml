@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/gradient"
+    tools:context=".Login">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Cojeet"
+        android:textSize="48dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/logintitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/logintitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Login"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/loginemail"/>
+
+    <EditText
+        android:id="@+id/loginemail"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+
+
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        android:textStyle="normal"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/purple_700"
+        android:textColorHighlight="#FF7DC1FD"
+        android:textColorHint="#100F0F"
+        android:textColorLink="@color/purple_700"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/loginpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logintitle" />
+
+    <EditText
+        android:id="@+id/loginpassword"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+
+        android:textStyle="normal"
+        android:fontFamily="sans-serif-light"
+        android:hint="Enter Password"
+        android:visibility="visible"
+        android:textColor="#100F0F"
+        android:textColorHighlight="#0E0E0E"
+        android:textColorHint="#100F0F"
+        android:textColorLink="#191818"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/loginbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginemail" />
+
+    <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Login"
+        android:backgroundTint="@color/purple_700"
+        android:background="@drawable/myback"
+        app:layout_constraintBottom_toTopOf="@+id/loginforgot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginpassword" />
+
+    <TextView
+        android:id="@+id/loginforgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot password ? Click here"
+        android:textStyle="bold"
+        android:onClick="callforgotpassword"
+        app:layout_constraintBottom_toTopOf="@+id/newhere"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginbutton" />
+
+    <TextView
+        android:id="@+id/newhere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Here ?"
+
+        android:textStyle="bold"
+
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/signup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginforgot"
+         />
+
+    <Button
+
+        android:id="@+id/signup"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:onClick="signupact"
+        android:text="Signup"
+        android:backgroundTint="@color/purple_700"
+        android:background="@drawable/myback"
+        app:layout_constraintBottom_toTopOf="@id/logprogressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newhere" />
+
+    <ProgressBar
+        android:id="@+id/logprogressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>

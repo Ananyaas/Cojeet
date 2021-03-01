@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:padding="16dp"
+    tools:context=".Signup">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:text="Cojeet"
+        android:textSize="48dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/signuptitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/signuptitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:text="Sign up"
+
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/username"/>
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+
+        android:inputType="text"
+        android:hint="Name"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/purple_700"
+        android:textColorHighlight="#FF7DC1FD"
+        android:textColorHint="#100F0F"
+        android:textColorLink="@color/purple_700"
+
+        app:layout_constraintBottom_toTopOf="@+id/signupemail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signuptitle" />
+    <EditText
+        android:id="@+id/signupemail"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/purple_700"
+        android:textColorHighlight="#FF7DC1FD"
+        android:textColorHint="#100F0F"
+        android:textColorLink="@color/purple_700"
+        app:layout_constraintBottom_toTopOf="@+id/signuppassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <EditText
+        android:id="@+id/signuppassword"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+
+        android:hint="Password"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/purple_700"
+        android:textColorHighlight="#FF7DC1FD"
+        android:textColorHint="#100F0F"
+        android:textColorLink="@color/purple_700"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/signupconfpass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupemail" />
+
+    <EditText
+        android:id="@+id/signupconfpass"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/purple_700"
+        android:textColorHighlight="#FF7DC1FD"
+        android:textColorHint="#100F0F"
+        android:textColorLink="@color/purple_700"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/contact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signuppassword" />
+
+    <EditText
+        android:id="@+id/contact"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:hint="Contact number"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/purple_700"
+        android:textColorHighlight="#FF7DC1FD"
+        android:textColorHint="#100F0F"
+        android:textColorLink="@color/purple_700"
+        app:layout_constraintBottom_toTopOf="@+id/signupbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupconfpass" />
+    <Button
+        android:id="@+id/signupbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/myback"
+        android:text="Next"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
