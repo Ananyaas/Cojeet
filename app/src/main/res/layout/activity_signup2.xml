@@ -54,11 +54,11 @@
             android:hint="Age"
             android:inputType="text"
             android:textColor="@color/purple_700"
-            android:textSize="12dp"
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
-
             android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
             app:layout_constraintBottom_toTopOf="@+id/ed2"
             app:layout_constraintEnd_toStartOf="@id/ed4"
             app:layout_constraintStart_toStartOf="parent"

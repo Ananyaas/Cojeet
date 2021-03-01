@@ -21,7 +21,7 @@ public class Signup extends AppCompatActivity {
     EditText name,email,pwd,conpwd,contact1;
     Button signup1;
     FirebaseAuth auth;
-    DBHelper DB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +33,9 @@ public class Signup extends AppCompatActivity {
         contact1=findViewById(R.id.contact);
         signup1=findViewById(R.id.signupbutton);
         auth=FirebaseAuth.getInstance();
-        DB = new DBHelper(this);
 
-        if(auth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),MainActivity2.class));
-        }
+
+
         signup1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,9 +90,15 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    DB.insertData1(name2,email2,contact2);
+
                     Toast.makeText(Signup.this,"Welcome user",Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(getApplicationContext(),Signup2.class));
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name", name2);
+                    bundle.putString("Email", email2);
+                    bundle.putString("Contact", contact2);
+                    Intent intent=new Intent(Signup.this,Signup2.class);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(Signup.this,"Something went wrong",Toast.LENGTH_LONG).show();

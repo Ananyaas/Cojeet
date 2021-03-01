@@ -20,20 +20,13 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop Table if exists USER_DETAILS");
     }
-    SQLiteDatabase DB= this.getWritableDatabase();
-    ContentValues contentValues= new ContentValues();
-    public boolean insertData1(String name,String email,String contact){
+
+    public boolean insertData2(String name,String email,String contact,String age,String gender,String height,String weight,String corona,String vaccine,String medhis){
+        SQLiteDatabase DB= this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
         contentValues.put("Username", name);
         contentValues.put("Email", email);
         contentValues.put("Contact", contact);
-        long result = DB.insert("USER_DETAILS",null, contentValues);
-        if(result==-1) return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertData2(String age,String gender,String height,String weight,String corona,String vaccine,String medhis){
         contentValues.put("Age", age);
         contentValues.put("Gender", gender);
         contentValues.put("Height", height);

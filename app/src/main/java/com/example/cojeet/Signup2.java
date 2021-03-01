@@ -21,14 +21,16 @@ public class Signup2 extends AppCompatActivity {
     Button medsign;
     DBHelper DB;
     RadioGroup rb;
-    String medhelp,gender,Email;
+    String medhelp,gender,Email,Name,Contact;
     CheckBox Fever,Dcough,Chestp,Tiredness,Diarrhoea,Conjectiv,Shortob,Anp,Lossos,Sorethroat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup2);
-        Intent intent = getIntent();
-        Email= intent.getStringExtra ("Email");
+        Bundle bundle = getIntent().getExtras();
+        Email= bundle.getString ("Email");
+        Name=bundle.getString ("Name");
+        Contact=bundle.getString("Contact");
 
         Age=findViewById(R.id.ed1);
         Weight=findViewById(R.id.ed2);
@@ -136,7 +138,7 @@ public class Signup2 extends AppCompatActivity {
             medhelp=medhelp+", "+"Loss Of speech and movement";
         }
 
-        boolean x=DB.insertData2(age,gender,height,weight,corona,vaccine,medhelp);
+        boolean x=DB.insertData2(Name,Email,Contact,age,gender,height,weight,corona,vaccine,medhelp);
         if(x==true)
         {
             Toast.makeText(Signup2.this,"Signed in successfully",Toast.LENGTH_LONG).show();
