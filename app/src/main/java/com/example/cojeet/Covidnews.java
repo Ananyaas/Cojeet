@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -78,13 +79,17 @@ public class Covidnews extends AppCompatActivity {
         retrieveJson("virus",country,API_KEY);
 
     }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+    }
 
     public void retrieveJson(String query ,String country, String apiKey){
 
 
         swipeRefreshLayout.setRefreshing(true);
         Call<Headlines> call;
-        call= ApiClient.getInstance().getApi().getSpecificData(query,apiKey);
+        call= ApiClient.getInstance().getApi().getSpecificData(query,"publishedAt",apiKey);
 
         call.enqueue(new Callback<Headlines>() {
             @Override

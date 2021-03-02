@@ -18,6 +18,7 @@ public interface ApiInterface {
     @GET("everything")
     Call<Headlines> getSpecificData(
             @Query("q") String query,
+            @Query("sortBy") String sort,
             @Query("apiKey") String apiKey
     );
 
