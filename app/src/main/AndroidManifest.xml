@@ -3,6 +3,7 @@
     package="com.example.cojeet">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -13,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cojeet">
-        <activity android:name=".Signup2"></activity>
+        <activity android:name=".Covidnews" android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".Detailed" android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name=".Signup2" />
         <activity android:name=".symptomassessment" />
         <activity android:name=".forgotpassword" />
         <activity android:name=".MainActivity2" />
