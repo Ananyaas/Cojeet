@@ -1,4 +1,4 @@
-package com.example.cojeet.api;
+package com.example.cojeet.Covidnews.covidnewsapi;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

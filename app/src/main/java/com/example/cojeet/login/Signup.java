@@ -1,6 +1,5 @@
-package com.example.cojeet;
+package com.example.cojeet.login;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.cojeet.MainActivity2;
+import com.example.cojeet.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -35,7 +36,7 @@ public class Signup extends AppCompatActivity {
         auth=FirebaseAuth.getInstance();
 
         if(auth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity2.class));
         }
 
         signup1.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +51,7 @@ public class Signup extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),Login.class));
+        startActivity(new Intent(getApplicationContext(), Login.class));
     }
 
     private void storedata() {
@@ -98,7 +99,7 @@ public class Signup extends AppCompatActivity {
                     bundle.putString("name", name2);
                     bundle.putString("Email", email2);
                     bundle.putString("Contact", contact2);
-                    Intent intent=new Intent(Signup.this,Signup2.class);
+                    Intent intent=new Intent(Signup.this, Signup2.class);
                     intent.putExtras(bundle);
                     startActivity(intent);
                 }

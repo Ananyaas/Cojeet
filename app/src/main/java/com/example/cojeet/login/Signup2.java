@@ -1,11 +1,9 @@
-package com.example.cojeet;
+package com.example.cojeet.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +12,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.example.cojeet.MainActivity2;
+import com.example.cojeet.R;
 
 public class Signup2 extends AppCompatActivity {
     EditText Age,Height,Weight,Corona,Vaccine;
@@ -66,7 +67,7 @@ public class Signup2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),Login.class));
+        startActivity(new Intent(getApplicationContext(), Login.class));
     }
 
     private void storedata() {
@@ -142,7 +143,7 @@ public class Signup2 extends AppCompatActivity {
         if(x==true)
         {
             Toast.makeText(Signup2.this,"Signed in successfully",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity2.class));
         }
         else
             Toast.makeText(Signup2.this,"Something went wrong",Toast.LENGTH_LONG).show();

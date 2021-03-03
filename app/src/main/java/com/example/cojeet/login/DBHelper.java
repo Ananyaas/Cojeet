@@ -1,4 +1,4 @@
-package com.example.cojeet;
+package com.example.cojeet.login;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;

@@ -1,4 +1,4 @@
-package com.example.cojeet;
+package com.example.cojeet.Covidnews;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cojeet.models.Articles;
+import com.example.cojeet.R;
+import com.example.cojeet.Covidnews.models.Articles;
 
 import com.squareup.picasso.Picasso;
 
@@ -60,7 +61,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,Detailed.class);
+                Intent intent = new Intent(context, Detailed.class);
                 intent.putExtra("title",a.getTitle());
                 intent.putExtra("source",a.getSource().getName());
                 intent.putExtra("time",dateTime(a.getPublishedAt()));

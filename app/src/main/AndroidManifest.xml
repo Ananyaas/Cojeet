@@ -14,14 +14,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cojeet">
-        <activity android:name=".Covidnews" android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".Detailed" android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"></activity>
-        <activity android:name=".Signup2" />
+        <activity android:name=".Covidstats.Covidstats"></activity>
+        <activity
+            android:name=".Covidnews.Covid_news"
+            android:screenOrientation="locked"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Covidnews.Detailed"
+            android:screenOrientation="locked"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".login.Signup2" />
         <activity android:name=".symptomassessment" />
-        <activity android:name=".forgotpassword" />
+        <activity android:name=".login.forgotpassword" />
         <activity android:name=".MainActivity2" />
-        <activity android:name=".Signup" />
-        <activity android:name=".Login" />
+        <activity android:name=".login.Signup" />
+        <activity android:name=".login.Login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

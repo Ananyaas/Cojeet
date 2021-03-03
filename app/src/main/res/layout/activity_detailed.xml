@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Detailed"
+    tools:context=".Covidnews.Detailed"
     android:background="@drawable/gradient">
 
     <ScrollView
@@ -49,10 +49,7 @@
 
 
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/gradient"/>
+
 
 
 

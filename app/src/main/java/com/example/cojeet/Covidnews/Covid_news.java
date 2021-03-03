@@ -1,7 +1,5 @@
-package com.example.cojeet;
+package com.example.cojeet.Covidnews;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,29 +8,23 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.cojeet.api.ApiClient;
-import com.example.cojeet.models.Articles;
-import com.example.cojeet.models.Headlines;
+import com.example.cojeet.MainActivity2;
+import com.example.cojeet.R;
+import com.example.cojeet.Covidnews.covidnewsapi.ApiClient;
+import com.example.cojeet.Covidnews.models.Articles;
+import com.example.cojeet.Covidnews.models.Headlines;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Queue;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Covidnews extends AppCompatActivity {
+public class Covid_news extends AppCompatActivity {
 
     RecyclerView recyclerView;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -52,7 +44,7 @@ public class Covidnews extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
 
 
-        dialog = new Dialog(Covidnews.this);
+        dialog = new Dialog(Covid_news.this);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         final String country = getCountry();
@@ -81,7 +73,7 @@ public class Covidnews extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+        startActivity(new Intent(getApplicationContext(), MainActivity2.class));
     }
 
     public void retrieveJson(String query ,String country, String apiKey){
@@ -98,7 +90,7 @@ public class Covidnews extends AppCompatActivity {
                     swipeRefreshLayout.setRefreshing(false);
                     articles.clear();
                     articles = response.body().getArticles();
-                    adapter = new Adapter(Covidnews.this,articles);
+                    adapter = new Adapter(Covid_news.this,articles);
                     recyclerView.setAdapter(adapter);
 
                 }
@@ -108,7 +100,7 @@ public class Covidnews extends AppCompatActivity {
             @Override
             public void onFailure(Call<Headlines> call, Throwable t) {
                 swipeRefreshLayout.setRefreshing(false);
-                Toast.makeText(Covidnews.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Covid_news.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

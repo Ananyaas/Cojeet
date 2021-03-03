@@ -1,4 +1,4 @@
-package com.example.cojeet;
+package com.example.cojeet.Covidnews;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.cojeet.R;
 import com.squareup.picasso.Picasso;
 
 public class Detailed extends AppCompatActivity {

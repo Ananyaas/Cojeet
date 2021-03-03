@@ -1,4 +1,4 @@
-package com.example.cojeet;
+package com.example.cojeet.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,9 +9,10 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Button;
 
+import com.example.cojeet.MainActivity2;
+import com.example.cojeet.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,7 +40,7 @@ public class Login extends AppCompatActivity {
         progressbar = findViewById(R.id.logprogressBar);
 
         if(mAuth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity2.class));
         }
         // Set on Click Listener on Sign-in button
         Btn.setOnClickListener(new View.OnClickListener() {

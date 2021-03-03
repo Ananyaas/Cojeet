@@ -1,4 +1,4 @@
-package com.example.cojeet.models;
+package com.example.cojeet.Covidnews.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

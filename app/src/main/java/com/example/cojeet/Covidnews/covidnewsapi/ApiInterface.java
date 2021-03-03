@@ -1,6 +1,6 @@
-package com.example.cojeet.api;
+package com.example.cojeet.Covidnews.covidnewsapi;
 
-import com.example.cojeet.models.Headlines;
+import com.example.cojeet.Covidnews.models.Headlines;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
