@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.content.Intent;
 
 import com.example.cojeet.Covidnews.Covid_news;
+import com.example.cojeet.login.Login;
 
 public class MainActivity extends AppCompatActivity {
     Handler handler;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(MainActivity.this, MainActivity.class);
+                Intent intent=new Intent(MainActivity.this, Login.class);
                 startActivity(intent);
                 finish();
             }
