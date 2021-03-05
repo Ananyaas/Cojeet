@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.cojeet.MainActivity2;
 import com.example.cojeet.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -35,9 +34,7 @@ public class Signup extends AppCompatActivity {
         signup1=findViewById(R.id.signupbutton);
         auth=FirebaseAuth.getInstance();
 
-        if(auth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(), MainActivity2.class));
-        }
+
 
         signup1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +93,7 @@ public class Signup extends AppCompatActivity {
 
                     Toast.makeText(Signup.this,"Welcome user",Toast.LENGTH_LONG).show();
                     Bundle bundle = new Bundle();
-                    bundle.putString("name", name2);
+                    bundle.putString("Name", name2);
                     bundle.putString("Email", email2);
                     bundle.putString("Contact", contact2);
                     Intent intent=new Intent(Signup.this, Signup2.class);

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -57,12 +56,7 @@ public class Signup2 extends AppCompatActivity {
         medsign=findViewById(R.id.signupbutton2);
         DB = new DBHelper(this);
 
-        medsign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                storedata();
-            }
-        });
+        medsign.setOnClickListener(v -> storedata());
     }
 
     @Override
@@ -140,10 +134,10 @@ public class Signup2 extends AppCompatActivity {
         }
 
         boolean x=DB.insertData2(Name,Email,Contact,age,gender,height,weight,corona,vaccine,medhelp);
-        if(x==true)
+        if(x)
         {
             Toast.makeText(Signup2.this,"Signed in successfully",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+            startActivity(new Intent(this, MainActivity2.class));
         }
         else
             Toast.makeText(Signup2.this,"Something went wrong",Toast.LENGTH_LONG).show();
