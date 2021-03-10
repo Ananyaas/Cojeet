@@ -1,47 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    android:padding="16dp"
-    tools:context=".login.Signup2">
+    android:orientation="vertical"
+    tools:context=".login.Signup2"
+    >
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
         <TextView
             android:id="@+id/title2"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:gravity="center"
             android:text="Cojeet"
             android:textSize="48dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/signuptitle2"
+
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:layout_editor_absoluteY="57dp" />
 
         <TextView
             android:id="@+id/signuptitle2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:layout_marginBottom="68dp"
             android:gravity="center"
+
+
             android:text="Medical details"
 
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/ed1"
+
+            app:layout_constraintTop_toBottomOf="@+id/title2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title2" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/ed1"
@@ -49,7 +56,6 @@
             android:layout_height="36dp"
 
 
-            android:layout_marginTop="5dp"
             android:fontFamily="sans-serif-light"
             android:hint="Age"
             android:inputType="text"
@@ -59,16 +65,17 @@
             android:textColorLink="@color/purple_700"
 
             android:textSize="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/ed2"
+
             app:layout_constraintEnd_toStartOf="@id/ed4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signuptitle2" />
+            app:layout_constraintTop_toBottomOf="@+id/signuptitle2"
+            tools:layout_editor_absoluteY="182dp"
+            tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/ed4"
             android:layout_width="110dp"
             android:layout_height="37dp"
-            android:textSize="12dp"
             android:layout_marginTop="3dp"
             android:fontFamily="sans-serif-light"
             android:hint="Height(cm)"
@@ -77,10 +84,12 @@
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-            app:layout_constraintBottom_toTopOf="@+id/ed5"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@id/ed2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/ed1"
-            app:layout_constraintTop_toBottomOf="@+id/signuptitle2" />
+            app:layout_constraintTop_toBottomOf="@+id/signuptitle2"
+            app:layout_constraintVertical_bias="1.0" />
 
         <EditText
             android:id="@+id/ed2"
@@ -96,74 +105,183 @@
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
             android:textSize="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/ed3"
-            app:layout_constraintEnd_toStartOf="@id/ed5"
+
+            app:layout_constraintEnd_toStartOf="@id/ed4"
+            app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ed1" />
 
-        <EditText
-            android:id="@+id/ed5"
-            android:layout_width="111dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="2dp"
+        <TextView
+            android:id="@+id/corona"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-            android:fontFamily="sans-serif-light"
-            android:hint="Corona Status(+/-)"
-            android:inputType="text"
-            android:textColor="@color/purple_700"
-            android:textColorHighlight="#FF7DC1FD"
-            android:textColorHint="#100F0F"
-            android:textColorLink="@color/purple_700"
-            android:textSize="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/rb1"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+
+            android:text="Covid status"
+
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ed2"
-            app:layout_constraintTop_toBottomOf="@+id/ed1" />
-
-        <EditText
-            android:id="@+id/ed3"
-            android:layout_width="145dp"
-            android:layout_height="36dp"
-            android:fontFamily="sans-serif-light"
-            android:hint="Vaccination Status(Y/N)"
-            android:inputType="text"
-            android:textColor="@color/purple_700"
-            android:textColorHighlight="#FF7DC1FD"
-            android:textColorHint="#100F0F"
-            android:textColorLink="@color/purple_700"
-            android:textSize="12dp"
-            app:layout_constraintBottom_toTopOf="@id/cb1"
-            app:layout_constraintEnd_toStartOf="@+id/rb1"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ed2" />
 
         <RadioGroup
-            android:id="@+id/rb1"
-            android:layout_marginBottom="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/cb5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ed3"
-            app:layout_constraintTop_toBottomOf="@id/ed5">
+                android:id="@+id/covidstatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="left"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/corona">
 
             <RadioButton
-                android:id="@+id/rb11"
+                android:id="@+id/csp"
                 android:layout_width="89dp"
                 android:layout_height="34dp"
-                android:hint="Male"
+                android:layout_gravity="left"
+                android:hint="Positive"
                 android:textColorHint="#100F0F"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+
+                />
+
+            <RadioButton
+                android:id="@+id/csn"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:hint="Negative"
+                android:textColorHint="#100F0F"
+                android:textSize="12dp"
+                tools:layout_editor_absoluteX="9dp"
+                tools:layout_editor_absoluteY="370dp" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/vaccstatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+
+            android:text="Vaccination status"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/covidstatus" />
+
+        <RadioGroup
+                android:id="@+id/vaccination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vaccstatus">
+            <RadioButton
+                android:id="@+id/yes"
+                android:layout_width="89dp"
+                android:layout_height="34dp"
+                android:hint="Vaccinated"
+                android:textColorHint="#100F0F"
+                android:textSize="12dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="444dp" />
+
+            <RadioButton
+                android:id="@+id/no"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:hint="Not Vaccinated"
+                android:textColorHint="#100F0F"
+                android:textSize="12dp"
+                tools:layout_editor_absoluteX="-2dp"
+                tools:layout_editor_absoluteY="501dp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+
+            android:text="Select Gender"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vaccination" />
+
+        <RadioGroup
+                android:id="@+id/gen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gender">
+
+            <RadioButton
+                android:id="@+id/rb13"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:hint="Female"
+                android:textColorHint="#100F0F"
+                android:textSize="12dp"
+                tools:layout_editor_absoluteX="-2dp"
+                tools:layout_editor_absoluteY="618dp" />
 
             <RadioButton
                 android:id="@+id/rb12"
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
-                android:hint="Female"
+                android:hint="Male"
                 android:textColorHint="#100F0F"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="584dp" />
+
+            <RadioButton
+                android:id="@+id/rb11"
+                android:layout_width="89dp"
+                android:layout_height="34dp"
+                android:hint="Other"
+                android:textColorHint="#100F0F"
+                android:textSize="12dp"
+                tools:layout_editor_absoluteX="-3dp"
+                tools:layout_editor_absoluteY="547dp" />
+
         </RadioGroup>
 
+
+        <TextView
+            android:id="@+id/symp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+
+            android:text="Select Symptoms(if you have any)"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gen" />
 
         <CheckBox
             android:id="@+id/cb1"
@@ -173,97 +291,95 @@
             android:ems="10"
             android:fontFamily="sans-serif-light"
             android:text="Fever"
-            android:textSize="12dp"
             android:textColor="#100F0F"
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-            app:layout_constraintBottom_toTopOf="@+id/cb2"
-            app:layout_constraintEnd_toStartOf="@id/cb6"
+            android:textSize="12dp"
+
+
 
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rb1" />
+            app:layout_constraintTop_toBottomOf="@+id/symp" />
 
         <CheckBox
-            android:id="@+id/cb6"
-            android:layout_width="128dp"
-            android:layout_height="35dp"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:fontFamily="sans-serif-light"
-            android:text="Diarrhoea"
-            android:textSize="12dp"
-            android:textColor="#100F0F"
-            android:textColorHighlight="#FF7DC1FD"
-            android:textColorHint="#100F0F"
-            android:textColorLink="@color/purple_700"
-            app:layout_constraintBottom_toTopOf="@+id/cb7"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/cb1"
-            app:layout_constraintTop_toBottomOf="@+id/rb1"
-    />
+                android:id="@+id/cb6"
+                android:layout_width="128dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:text="Diarrhoea"
+                android:textColor="#100F0F"
+                android:textColorHighlight="#FF7DC1FD"
+                android:textColorHint="#100F0F"
+                android:textColorLink="@color/purple_700"
+                android:textSize="12dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cb1"
+                app:layout_constraintTop_toBottomOf="@+id/symp" />
 
         <CheckBox
             android:id="@+id/cb2"
             android:layout_width="128dp"
             android:layout_height="35dp"
-            android:layout_marginBottom="5dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
             android:text="Dry Cough"
             android:textColor="#100F0F"
-            android:textSize="12dp"
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-            app:layout_constraintBottom_toTopOf="@+id/cb3"
-            app:layout_constraintEnd_toStartOf="@id/cb7"
+            android:textSize="12dp"
+
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cb1"
-            />
+
+            app:layout_constraintTop_toBottomOf="@+id/cb1" />
 
         <CheckBox
             android:id="@+id/cb7"
             android:layout_width="128dp"
             android:layout_height="35dp"
 
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
             android:text="Conjunctivitis"
             android:textColor="#100F0F"
-            android:textSize="12dp"
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-            app:layout_constraintBottom_toTopOf="@+id/cb8"
+
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toEndOf="@+id/cb2"
             app:layout_constraintTop_toBottomOf="@+id/cb6" />
 
         <CheckBox
-            android:id="@+id/cb3"
-            android:layout_width="127dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:fontFamily="sans-serif-light"
-            android:text="Tiredness"
-            android:textSize="12dp"
-            android:textColor="#100F0F"
-            android:textColorHighlight="#FF7DC1FD"
-            android:textColorHint="#100F0F"
-            android:textColorLink="@color/purple_700"
-            app:layout_constraintBottom_toTopOf="@+id/cb4"
-            app:layout_constraintEnd_toStartOf="@id/cb8"
+                android:id="@+id/cb3"
+                android:layout_width="127dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:text="Tiredness"
+                android:textColor="#100F0F"
+                android:textColorHighlight="#FF7DC1FD"
+                android:textColorHint="#100F0F"
+                android:textColorLink="@color/purple_700"
+                android:textSize="12dp"
+
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cb2" />
+
+                app:layout_constraintTop_toBottomOf="@+id/cb2"
+            tools:ignore="MissingConstraints" />
 
         <CheckBox
             android:id="@+id/cb8"
-            android:layout_width="128dp"
+            android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="5dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
             android:text="Shortness of breath"
@@ -272,91 +388,331 @@
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
             android:textSize="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/cb9"
+
             app:layout_constraintEnd_toEndOf="parent"
 
 
+            app:layout_constraintHorizontal_bias="0.589"
             app:layout_constraintStart_toEndOf="@id/cb3"
-            app:layout_constraintTop_toBottomOf="@+id/cb7"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/cb7" />
 
         <CheckBox
             android:id="@+id/cb4"
             android:layout_width="127dp"
             android:layout_height="37dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
             android:text="Chest Pain"
-            android:textSize="12dp"
             android:textColor="#100F0F"
 
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-            app:layout_constraintBottom_toTopOf="@+id/cb5"
-            app:layout_constraintEnd_toStartOf="@id/cb9"
+
+            android:textSize="12dp"
+
 
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cb3"
-             />
+            app:layout_constraintTop_toBottomOf="@+id/cb3" />
 
         <CheckBox
-            android:id="@+id/cb9"
-            android:layout_width="124dp"
-            android:layout_height="37dp"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:fontFamily="sans-serif-light"
-            android:text="Aches and Pains"
-            android:textSize="12dp"
-            android:textColor="#100F0F"
-            android:textColorHighlight="#FF7DC1FD"
-            android:textColorHint="#100F0F"
-            android:textColorLink="@color/purple_700"
-            app:layout_constraintBottom_toTopOf="@+id/cb10"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/cb4"
-            app:layout_constraintTop_toBottomOf="@+id/cb8"
-            />
+                android:id="@+id/cb9"
+                android:layout_width="124dp"
+                android:layout_height="37dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:text="Aches and Pains"
+                android:textColor="#100F0F"
+                android:textColorHighlight="#FF7DC1FD"
+                android:textColorHint="#100F0F"
+                android:textColorLink="@color/purple_700"
+                android:textSize="12dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cb4"
+                app:layout_constraintTop_toBottomOf="@+id/cb8" />
+
 
         <CheckBox
             android:id="@+id/cb5"
             android:layout_width="128dp"
             android:layout_height="35dp"
 
+            android:layout_marginTop="8dp"
             android:ems="10"
-            android:textSize="12dp"
             android:fontFamily="sans-serif-light"
             android:text="Sore Throat"
             android:textColor="#100F0F"
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-            app:layout_constraintEnd_toStartOf="@id/cb10"
+
+            android:textSize="12dp"
+
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cb4"
-            app:layout_constraintBottom_toTopOf="@id/signupbutton2"/>
+            app:layout_constraintTop_toBottomOf="@+id/cb4" />
 
         <CheckBox
             android:id="@+id/cb10"
-            android:layout_width="122dp"
+            android:layout_width="160dp"
             android:layout_height="52dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
             android:text="Loss of speech or movement"
             android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+
+            android:textColorHint="#100F0F"
+
+            android:textColorLink="@color/purple_700"
             android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@id/cb5"
+            app:layout_constraintTop_toBottomOf="@+id/cb9" />
+
+        <TextView
+            android:id="@+id/medhis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+
+            android:text="Select Medical Condition(if any)"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+
+            app:layout_constraintTop_toBottomOf="@+id/cb5" />
+
+        <CheckBox
+            android:id="@+id/cb12"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Allergies"
+            android:textColor="#100F0F"
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/cb5"
-            app:layout_constraintTop_toBottomOf="@+id/cb9"
-            />
+            android:textSize="12dp"
 
+
+            app:layout_constraintTop_toBottomOf="@+id/medhis"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <CheckBox
+            android:id="@+id/cb13"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Pregnant/Breastfeeding"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/cb12"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/cb14"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Immunocompromised(due to organ or bone marrow transplant, HIV etc)"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/cb13"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/cb15"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Thalassemia/Bleeding Disorder or are on Blood Thinner/Heart Condition"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/cb14"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/cb16"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Cancer/Chronic Kidney Disease/COPD/Liver Disease/Cerebrovascuar Disease"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/cb15"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/cb17"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Diabetes/High BP/Asthma/Obesity"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/cb16"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/cb18"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Cystic Fibrosis/Pulmonary Fibrosis"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
+
+            app:layout_constraintTop_toBottomOf="@+id/cb17"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/conhis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+
+            android:text="Select if the following apply to you"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/cb18"
+            tools:ignore="UnknownId" />
+
+        <CheckBox
+            android:id="@+id/cb19"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="been within 6 feet of someone who has COVID-19 for a combined total of 15 minutes or more over a 24 hour period"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/conhis"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/cb20"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="provided care at home to someone who is sick with COVID-19"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/cb19"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/cb21"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="have direcly or indirectly contacted a COVID-19 positive person"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/cb20"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/cb22"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="been sneezed on or coughed on by someone who has COVID-19"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+
+            android:textSize="12dp"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/cb21"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/signupbutton2"
@@ -364,10 +720,15 @@
             android:layout_height="wrap_content"
             android:background="@drawable/myback"
             android:text="Sign Up"
-            app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cb10"
-             />
+            app:layout_constraintTop_toBottomOf="@id/cb22" />
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
+
+
+</ScrollView>

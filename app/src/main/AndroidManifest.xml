@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cojeet">
-        <activity android:name=".Covidstats.Covidstats"></activity>
+        <activity android:name=".Covidstats.Covidstats" />
         <activity
             android:name=".Covidnews.Covid_news"
             android:screenOrientation="locked"
@@ -26,7 +26,7 @@
         <activity android:name=".login.Signup2" />
         <activity android:name=".symptomassessment" />
         <activity android:name=".login.forgotpassword" />
-        <activity android:name=".MainActivity2" />
+        <activity android:name=".Menu" />
         <activity android:name=".login.Signup" />
         <activity android:name=".login.Login" />
         <activity android:name=".MainActivity">

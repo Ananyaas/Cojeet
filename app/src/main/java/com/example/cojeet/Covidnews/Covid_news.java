@@ -10,7 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.cojeet.MainActivity2;
+import com.example.cojeet.Menu;
 import com.example.cojeet.R;
 import com.example.cojeet.Covidnews.covidnewsapi.ApiClient;
 import com.example.cojeet.Covidnews.models.Articles;
@@ -73,7 +73,7 @@ public class Covid_news extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+        startActivity(new Intent(getApplicationContext(), Menu.class));
     }
 
     public void retrieveJson(String query ,String country, String apiKey){

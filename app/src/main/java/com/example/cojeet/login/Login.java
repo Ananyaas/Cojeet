@@ -11,7 +11,7 @@ import android.widget.Toast;
 import android.widget.EditText;
 import android.widget.Button;
 
-import com.example.cojeet.MainActivity2;
+import com.example.cojeet.Menu;
 import com.example.cojeet.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
@@ -39,8 +39,12 @@ public class Login extends AppCompatActivity {
         Btn = findViewById(R.id.loginbutton);
         progressbar = findViewById(R.id.logprogressBar);
 
-        if(mAuth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+        if(mAuth.getCurrentUser()!=null){ //put this inside
+            Toast.makeText(getApplicationContext(),
+                    "Login error!!",
+                    Toast.LENGTH_LONG)
+                    .show();
+            startActivity(new Intent(getApplicationContext(), Menu.class));
         }
         // Set on Click Listener on Sign-in button
         Btn.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +107,7 @@ public class Login extends AppCompatActivity {
                                     // intent to home activity
                                     Intent intent
                                             = new Intent(Login.this,
-                                            MainActivity2.class);
+                                            Menu.class);
                                     startActivity(intent);
                                 }
 
