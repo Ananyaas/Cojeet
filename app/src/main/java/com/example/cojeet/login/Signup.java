@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+import com.example.cojeet.Menu;
+
 import com.example.cojeet.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,6 +37,10 @@ public class Signup extends AppCompatActivity {
         signup1=findViewById(R.id.signupbutton);
         auth=FirebaseAuth.getInstance();
 
+
+       if(auth.getCurrentUser()!=null){
+            startActivity(new Intent(getApplicationContext(), Menu.class));
+        
 
 
         signup1.setOnClickListener(new View.OnClickListener() {

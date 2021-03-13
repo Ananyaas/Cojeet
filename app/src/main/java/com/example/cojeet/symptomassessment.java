@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -29,6 +28,6 @@ public class symptomassessment extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+        startActivity(new Intent(getApplicationContext(), Menu.class));
     }
 }
