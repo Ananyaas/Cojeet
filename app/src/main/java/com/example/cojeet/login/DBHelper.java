@@ -4,7 +4,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import android.util.Log;
+
 
 import androidx.annotation.Nullable;
 
@@ -17,7 +19,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE USER_DETAILS(Username TEXT,Email TEXT primary key ,Contact TEXT,Age TEXT,Gender TEXT,Height TEXT,Weight TEXT,CoronaStatus TEXT,VaccinationStatus TEXT,Medicalhistory TEXT)");
+
+
+        db.execSQL("CREATE TABLE USER_DETAILS(Username TEXT ,Email TEXT primary key ,Contact TEXT ,Age TEXT ,Gender TEXT,Height TEXT ,Weight TEXT ,CoronaStatus TEXT ,VaccinationStatus TEXT ,Medicalhistory TEXT )");
+
     }
 
     @Override
@@ -56,8 +61,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("Contact_history",cont);
         contentValues.put("location",loc);
         long result = DB.insert("USER_DETAILS", null, contentValues);
-        if(result==-1) return false;
-        else
-            return true;
+        return result != -1;
     }
 }
+

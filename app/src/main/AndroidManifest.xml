@@ -14,7 +14,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cojeet">
-        <activity android:name=".Covidstats.Covidstats" />
+        <activity android:name=".login.Signup2" />
+        <activity android:name=".symptomassessment" />
+        <activity android:name=".login.forgotpassword" />
+        <activity android:name=".Menu" />
+        <activity android:name=".login.Signup" />
+        <activity android:name=".login.Login" />
+        <activity android:name=".login.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Covidstats.Covidstats"></activity>
         <activity
             android:name=".Covidnews.Covid_news"
             android:screenOrientation="locked"
@@ -23,19 +36,6 @@
             android:name=".Covidnews.Detailed"
             android:screenOrientation="locked"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".login.Signup2" />
-        <activity android:name=".symptomassessment" />
-        <activity android:name=".login.forgotpassword" />
-        <activity android:name=".Menu" />
-        <activity android:name=".login.Signup" />
-        <activity android:name=".login.Login" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

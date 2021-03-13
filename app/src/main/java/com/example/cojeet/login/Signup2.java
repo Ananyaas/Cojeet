@@ -11,7 +11,6 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -141,12 +140,7 @@ public class Signup2 extends AppCompatActivity {
         medsign=findViewById(R.id.signupbutton2);
         DB = new DBHelper(this);
 
-        medsign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                storedata();
-            }
-        });
+        medsign.setOnClickListener(v -> storedata());
     }
 
     @Override
@@ -268,11 +262,13 @@ public class Signup2 extends AppCompatActivity {
         }
 
 
+
         boolean x=DB.insertData2(Name,Email,Contact,age,gender,height,weight,corona,vaccine,medhelp,mhis,cont,loc);
         if(x==true)
         {
             Toast.makeText(Signup2.this,"Signed in successfully",Toast.LENGTH_LONG).show();
             startActivity(new Intent(getApplicationContext(), Menu.class));
+
         }
         else
             Toast.makeText(Signup2.this,loc+"Error",Toast.LENGTH_LONG).show();
