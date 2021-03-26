@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     android:orientation="vertical"
-    tools:context=".login.Signup2"
+    tools:context=".login.EditProfile"
     >
 
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
 
         <TextView
@@ -33,22 +33,189 @@
             tools:layout_editor_absoluteY="57dp" />
 
         <TextView
-            android:id="@+id/signuptitle2"
+            android:id="@+id/eyp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_marginBottom="68dp"
+            android:layout_marginTop="8dp"
+
+
             android:gravity="center"
 
-
-            android:text="Medical details"
+            android:text="Edit your Profile"
 
             android:textStyle="bold"
-
-            app:layout_constraintTop_toBottomOf="@+id/title2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+        <TextView
+            android:id="@+id/un"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="28dp"
+
+
+            android:gravity="left"
+
+            android:text="User Name"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/uname"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eyp" />
+
+        <EditText
+            android:id="@+id/uname"
+            android:layout_width="116dp"
+            android:layout_height="36dp"
+
+
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginRight="88dp"
+            android:fontFamily="sans-serif-light"
+
+            android:inputType="text"
+            android:textColor="@color/purple_700"
+
+            android:textColorHighlight="#FF7DC1FD"
+
+            android:textColorHint="#100F0F"
+
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eyp"
+            tools:ignore="MissingConstraints"
+            android:autofillHints="" />
+
+        <TextView
+            android:id="@+id/pas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="40dp"
+
+
+            android:gravity="left"
+
+            android:text="Change Password"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/pass"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/un"
+            tools:ignore="DuplicateIds" />
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="116dp"
+            android:layout_height="36dp"
+
+
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginRight="88dp"
+            android:fontFamily="sans-serif-light"
+            android:hint="pass"
+            android:inputType="text"
+            android:textColor="@color/purple_700"
+
+            android:textColorHighlight="#FF7DC1FD"
+
+            android:textColorHint="#100F0F"
+
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uname"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/pasc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="36dp"
+
+
+            android:gravity="left"
+
+            android:text="Confirm Password"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/passc"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pas" />
+
+        <EditText
+            android:id="@+id/passc"
+            android:layout_width="116dp"
+            android:layout_height="36dp"
+
+
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginRight="88dp"
+            android:fontFamily="sans-serif-light"
+
+
+            android:inputType="text"
+
+            android:textColor="@color/purple_700"
+
+            android:textColorHighlight="#FF7DC1FD"
+
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pass"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/ph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="4dp"
+
+
+            android:layout_marginLeft="4dp"
+
+            android:layout_marginTop="36dp"
+
+            android:gravity="left"
+
+            android:text="Phone"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pasc" />
+
+        <EditText
+            android:id="@+id/phn"
+            android:layout_width="110dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="96dp"
+            android:layout_marginRight="96dp"
+            android:fontFamily="sans-serif-light"
+
+            android:inputType="text"
+            android:textColor="@color/purple_700"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pasc" />
 
         <EditText
             android:id="@+id/ed1"
@@ -56,20 +223,20 @@
             android:layout_height="36dp"
 
 
+            android:layout_marginTop="76dp"
             android:fontFamily="sans-serif-light"
-            android:hint="Age"
+
             android:inputType="text"
             android:textColor="@color/purple_700"
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
+
             android:textColorLink="@color/purple_700"
 
             android:textSize="12dp"
-
             app:layout_constraintEnd_toStartOf="@id/ed4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signuptitle2"
-            tools:layout_editor_absoluteY="182dp"
+            app:layout_constraintTop_toBottomOf="@+id/ph"
             tools:ignore="MissingConstraints" />
 
         <EditText
@@ -78,7 +245,7 @@
             android:layout_height="37dp"
             android:layout_marginTop="3dp"
             android:fontFamily="sans-serif-light"
-            android:hint="Height(cm)"
+
             android:inputType="text"
             android:textColor="@color/purple_700"
             android:textColorHighlight="#FF7DC1FD"
@@ -88,17 +255,16 @@
             app:layout_constraintBottom_toTopOf="@id/ed2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/ed1"
-            app:layout_constraintTop_toBottomOf="@+id/signuptitle2"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/phn" />
 
         <EditText
             android:id="@+id/ed2"
             android:layout_width="118dp"
             android:layout_height="39dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="56dp"
 
             android:fontFamily="sans-serif-light"
-            android:hint="Weight(kg)"
+
             android:inputType="text"
             android:textColor="@color/purple_700"
             android:textColorHighlight="#FF7DC1FD"
@@ -128,14 +294,14 @@
             app:layout_constraintTop_toBottomOf="@+id/ed2" />
 
         <RadioGroup
-                android:id="@+id/covidstatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:gravity="left"
+            android:id="@+id/covidstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="left"
 
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/corona">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/corona">
 
             <RadioButton
                 android:id="@+id/csp"
@@ -180,17 +346,17 @@
             app:layout_constraintTop_toBottomOf="@+id/covidstatus" />
 
         <RadioGroup
-                android:id="@+id/vaccination"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+            android:id="@+id/vaccination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
 
 
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/vaccstatus">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vaccstatus">
             <RadioButton
                 android:id="@+id/yes"
-                android:layout_width="120dp"
+                android:layout_width="89dp"
                 android:layout_height="34dp"
                 android:hint="Vaccinated"
                 android:text="Vaccinated"
@@ -201,7 +367,7 @@
 
             <RadioButton
                 android:id="@+id/no"
-                android:layout_width="120dp"
+                android:layout_width="match_parent"
                 android:layout_height="34dp"
                 android:hint="Not Vaccinated"
                 android:text="Not Vaccinated"
@@ -229,14 +395,14 @@
             app:layout_constraintTop_toBottomOf="@+id/vaccination" />
 
         <RadioGroup
-                android:id="@+id/gen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+            android:id="@+id/gen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
 
 
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/gender">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gender">
 
             <RadioButton
                 android:id="@+id/rb13"
@@ -310,22 +476,22 @@
             app:layout_constraintTop_toBottomOf="@+id/symp" />
 
         <CheckBox
-                android:id="@+id/cb6"
-                android:layout_width="128dp"
-                android:layout_height="35dp"
-                android:layout_marginBottom="5dp"
-                android:ems="10"
-                android:fontFamily="sans-serif-light"
-                android:text="Diarrhoea"
-                android:textColor="#100F0F"
-                android:textColorHighlight="#FF7DC1FD"
-                android:textColorHint="#100F0F"
-                android:textColorLink="@color/purple_700"
-                android:textSize="12dp"
+            android:id="@+id/cb6"
+            android:layout_width="128dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Diarrhoea"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
 
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cb1"
-                app:layout_constraintTop_toBottomOf="@+id/symp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cb1"
+            app:layout_constraintTop_toBottomOf="@+id/symp" />
 
         <CheckBox
             android:id="@+id/cb2"
@@ -365,22 +531,22 @@
             app:layout_constraintTop_toBottomOf="@+id/cb6" />
 
         <CheckBox
-                android:id="@+id/cb3"
-                android:layout_width="127dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="5dp"
-                android:ems="10"
-                android:fontFamily="sans-serif-light"
-                android:text="Tiredness"
-                android:textColor="#100F0F"
-                android:textColorHighlight="#FF7DC1FD"
-                android:textColorHint="#100F0F"
-                android:textColorLink="@color/purple_700"
-                android:textSize="12dp"
+            android:id="@+id/cb3"
+            android:layout_width="127dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Tiredness"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
 
             app:layout_constraintStart_toStartOf="parent"
 
-                app:layout_constraintTop_toBottomOf="@+id/cb2"
+            app:layout_constraintTop_toBottomOf="@+id/cb2"
             tools:ignore="MissingConstraints" />
 
         <CheckBox
@@ -424,22 +590,22 @@
             app:layout_constraintTop_toBottomOf="@+id/cb3" />
 
         <CheckBox
-                android:id="@+id/cb9"
-                android:layout_width="124dp"
-                android:layout_height="37dp"
-                android:layout_marginBottom="5dp"
-                android:ems="10"
-                android:fontFamily="sans-serif-light"
-                android:text="Aches and Pains"
-                android:textColor="#100F0F"
-                android:textColorHighlight="#FF7DC1FD"
-                android:textColorHint="#100F0F"
-                android:textColorLink="@color/purple_700"
-                android:textSize="12dp"
+            android:id="@+id/cb9"
+            android:layout_width="124dp"
+            android:layout_height="37dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:text="Aches and Pains"
+            android:textColor="#100F0F"
+            android:textColorHighlight="#FF7DC1FD"
+            android:textColorHint="#100F0F"
+            android:textColorLink="@color/purple_700"
+            android:textSize="12dp"
 
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cb4"
-                app:layout_constraintTop_toBottomOf="@+id/cb8" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cb4"
+            app:layout_constraintTop_toBottomOf="@+id/cb8" />
 
 
         <CheckBox
@@ -726,11 +892,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/myback"
-            android:text="Sign Up"
+            android:text="Update"
 
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/logout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cb22" />
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/myback"
+            android:text="Log Out"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/signupbutton2"
+            app:layout_constraintTop_toBottomOf="@id/cb22"
+           />
 
 
 

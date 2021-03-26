@@ -1,6 +1,8 @@
 package com.example.cojeet.login;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.Intent;
@@ -11,6 +13,7 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,12 +22,18 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.cojeet.MainActivity;
 import com.example.cojeet.Menu;
 import com.example.cojeet.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
@@ -32,29 +41,35 @@ import static android.Manifest.*;
 
 public class Signup2 extends AppCompatActivity {
     private FusedLocationProviderClient fusedLocationProviderClient;
-    Geocoder geocoder;
+    //Geocoder geocoder;
     Double lat,lon;
+    DatabaseReference ref;
+    User_Detail ud;
     List<Address> addresses;
     EditText Age,Height,Weight;
     RadioButton M,F,O,y,n,p,neg;
     Button medsign;
     DBHelper DB;
     RadioGroup gen,cov,vac;
-    String medhelp,gender,Email,Name,Contact, mhis,cont,vaccine,corona,loc;
+    String medhelp,gender,Email,Name,Contact, mhis,cont,vaccine,corona,loc,age,height,weight,state;
     CheckBox Fever,Dcough,Chestp,Tiredness,Diarrhoea,Conjectiv,Shortob,Anp,Lossos,Sorethroat,Allergy,Immuno,Preg,Blood,Disease,BP,Fibrosis,h1,h2,h3,h4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        loc="Not found";
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup2);
         Bundle bundle = getIntent().getExtras();
         Email= bundle.getString ("Email");
         Name=bundle.getString ("name");
         Contact=bundle.getString("Contact");
+        ref= FirebaseDatabase.getInstance().getReference().child("User_Detail");
+        ud=new User_Detail();
 
-        fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);
-        geocoder=new Geocoder(this, Locale.getDefault());
+        loc="delhi";
+
+        fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(Signup2.this);
+        //geocoder=new Geocoder(this, Locale.getDefault());
 
 
         Age=findViewById(R.id.ed1);
@@ -104,13 +119,27 @@ public class Signup2 extends AppCompatActivity {
         h4=findViewById(R.id.cb22);
 
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-            if(getApplicationContext().checkSelfPermission(permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
-                fusedLocationProviderClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
+            Log.e("Version","Correct");
+            if(ActivityCompat.checkSelfPermission(Signup2.this,
+                    Manifest.permission.ACCESS_COARSE_LOCATION)== PackageManager.PERMISSION_GRANTED){
+                Log.e("Version","Permission Given");
+
+                fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
                     @Override
-                    public void onSuccess(Location location) {
+                    public void onComplete(@NonNull Task<Location> task) {
+                        Location location=task.getResult();
                         if(location!=null){
-                            lat=location.getLatitude();
-                            lon=location.getLongitude();
+                            Geocoder geocoder=new Geocoder(Signup2.this,Locale.getDefault());
+                            Log.e("Version","location given");
+                            try {
+                                lat=location.getLatitude();
+                                lon=location.getLongitude();
+                                addresses=geocoder.getFromLocation(lat,lon,1);
+                                
+                                //loc="lat="+lat+" long="+lon;
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                 });
@@ -118,21 +147,10 @@ public class Signup2 extends AppCompatActivity {
 
             }
             else {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+               ActivityCompat.requestPermissions(Signup2.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},44);
             }
         }
-        try{
-            addresses=geocoder.getFromLocation(lat,lon,1);
-            String add=addresses.get(0).getAddressLine(0);
-            String area=addresses.get(0).getLocality();
-            String city=addresses.get(0).getAdminArea();
-            String coun=addresses.get(0).getCountryName();
-            String pc=addresses.get(0).getPostalCode();
-            loc=add+","+area+","+city+","+coun+","+pc;
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
+
 
 
 
@@ -155,9 +173,9 @@ public class Signup2 extends AppCompatActivity {
     }
 
     private void storedata() {
-        String age=Age.getText().toString();
-        String weight=Weight.getText().toString();
-        String height=Height.getText().toString();
+        age=Age.getText().toString();
+        weight=Weight.getText().toString();
+        height=Height.getText().toString();
 
 
 
@@ -180,14 +198,15 @@ public class Signup2 extends AppCompatActivity {
             Toast.makeText(Signup2.this,"please select gender",Toast.LENGTH_SHORT).show();
             return ;
         }
+        
         if(M.isChecked()){
-            gender="male";
+            gender=M.getText().toString();
         }
         if(F.isChecked()){
-            gender="female";
+            gender=F.getText().toString();
         }
         if(O.isChecked()){
-            gender="other";
+            gender=O.getText().toString();
         }
         if (cov.getCheckedRadioButtonId() == -1)
         {
@@ -195,10 +214,10 @@ public class Signup2 extends AppCompatActivity {
             return ;
         }
         if(p.isChecked()){
-            corona="pos";
+            corona=p.getText().toString().trim();
         }
-        if(n.isChecked()){
-            corona="neg";
+        if(neg.isChecked()){
+            corona=n.getText().toString().trim();
         }
         if (vac.getCheckedRadioButtonId() == -1)
         {
@@ -206,41 +225,41 @@ public class Signup2 extends AppCompatActivity {
             return ;
         }
         if(y.isChecked()){
-            vaccine="yes";
+            vaccine=y.getText().toString();
         }
         if(n.isChecked()){
-            vaccine="no";
+            vaccine=n.getText().toString();
         }
 
         if(Fever.isChecked()){
-            medhelp+=Fever.getText()+",";
+            medhelp+=Fever.getText().toString()+",";
         }
         if(Dcough.isChecked()){
-            medhelp+="Dry Cough"+",";
+            medhelp+=Dcough.getText().toString()+",";
         }
         if(Tiredness.isChecked()){
-            medhelp+="Tiredness"+",";
+            medhelp+=Tiredness.getText().toString()+",";
         }
         if(Chestp.isChecked()){
-            medhelp+="Chest Pain"+",";
+            medhelp+=Chestp.getText().toString()+",";
         }
         if(Sorethroat.isChecked()){
-            medhelp+="Sorethroat"+",";
+            medhelp+=Sorethroat.getText().toString()+",";
         }
         if(Diarrhoea.isChecked()){
-            medhelp+="Diarrhoea"+",";
+            medhelp+=Diarrhoea.getText().toString()+",";
         }
         if(Conjectiv.isChecked()){
-            medhelp+="Conjunctivitis"+",";
+            medhelp+=Conjectiv.getText().toString()+",";
         }
         if(Shortob.isChecked()){
-            medhelp+="Short Of Breath"+",";
+            medhelp+=Shortob.getText().toString()+",";
         }
         if(Anp.isChecked()){
-            medhelp+="Aches and Pains"+",";
+            medhelp+=Anp.getText().toString()+",";
         }
         if(Lossos.isChecked()){
-            medhelp+="Loss Of speech and movement"+",";
+            medhelp+=Lossos.getText().toString()+",";
         }
         if(Preg.isChecked()){
             mhis+=Preg.getText()+"/";
@@ -263,18 +282,45 @@ public class Signup2 extends AppCompatActivity {
         if(Fibrosis.isChecked()){
             mhis+=Fibrosis.getText()+"/";
         }
-        if(h1.isChecked()||h2.isChecked()||h3.isChecked()||h4.isChecked()){
-            cont="yes";
+        if(h1.isChecked()){
+            cont+=h1.getText().toString();
+        }
+        if(h2.isChecked()){
+            cont+=h2.getText().toString();
+        }
+        if(h3.isChecked()){
+            cont+=h3.getText().toString();
+        }
+        if(h4.isChecked()){
+            cont+=h4.getText().toString();
         }
 
+        ud.setUsername(Name);
+        ud.setEmail(Email);
+        ud.setContact(Contact);
+        ud.setAge(age);
+        ud.setGender(gender);
+        ud.setHeight(height);
+        ud.setWeight(weight);
+        ud.setCoronaStatus(corona);
+        ud.setVaccinationStatus(vaccine);
+        ud.setSymptoms(medhelp);
+        ud.setHealthCondition(mhis);
+        ud.setContactHistory(cont);
+        ud.setLat(lat);
+        ud.setLon(lon);
+        ud.setState(state);
+        ref.push().setValue(ud);
+        Toast.makeText(Signup2.this,"Signed in successfully",Toast.LENGTH_LONG).show();
+        startActivity(new Intent(getApplicationContext(), Menu.class));
 
-        boolean x=DB.insertData2(Name,Email,Contact,age,gender,height,weight,corona,vaccine,medhelp,mhis,cont,loc);
+      /* boolean x=DB.insertData2(Name,Email,Contact,age,gender,height,weight,corona,vaccine,medhelp,mhis,cont,loc);
         if(x==true)
         {
             Toast.makeText(Signup2.this,"Signed in successfully",Toast.LENGTH_LONG).show();
             startActivity(new Intent(getApplicationContext(), Menu.class));
         }
         else
-            Toast.makeText(Signup2.this,loc+"Error",Toast.LENGTH_LONG).show();
+            Toast.makeText(Signup2.this,loc+"Error",Toast.LENGTH_LONG).show(); */
     }
 }
