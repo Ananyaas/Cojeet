@@ -1,4 +1,4 @@
-package com.example.cojeet.login;
+ package com.example.cojeet.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,8 +40,9 @@ import java.util.Locale;
 import static android.Manifest.*;
 
 public class Signup2 extends AppCompatActivity {
-    private FusedLocationProviderClient fusedLocationProviderClient;
-    //Geocoder geocoder;
+    FusedLocationProviderClient fusedLocationProviderClient;
+    States s;
+    Geocoder geocoder;
     Double lat,lon;
     DatabaseReference ref;
     User_Detail ud;
@@ -67,9 +68,11 @@ public class Signup2 extends AppCompatActivity {
         ud=new User_Detail();
 
         loc="delhi";
+        s=new States();
+        s.init();
 
         fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(Signup2.this);
-        //geocoder=new Geocoder(this, Locale.getDefault());
+        //geocoder=new Geocoder(Signup2.this, Locale.getDefault());
 
 
         Age=findViewById(R.id.ed1);
@@ -121,21 +124,26 @@ public class Signup2 extends AppCompatActivity {
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             Log.e("Version","Correct");
             if(ActivityCompat.checkSelfPermission(Signup2.this,
-                    Manifest.permission.ACCESS_COARSE_LOCATION)== PackageManager.PERMISSION_GRANTED){
+                    permission.ACCESS_FINE_LOCATION )== PackageManager.PERMISSION_GRANTED){
                 Log.e("Version","Permission Given");
-
                 fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
                     @Override
                     public void onComplete(@NonNull Task<Location> task) {
                         Location location=task.getResult();
+                        //Log.e("Version","latitude= "+lat);
                         if(location!=null){
                             Geocoder geocoder=new Geocoder(Signup2.this,Locale.getDefault());
                             Log.e("Version","location given");
                             try {
                                 lat=location.getLatitude();
                                 lon=location.getLongitude();
+                                Log.e("Version","longitude="+lon);
+                                Log.e("Version","latitude= "+lat);
                                 addresses=geocoder.getFromLocation(lat,lon,1);
-                                
+                                state=addresses.get(0).getAddressLine(0);
+                                state=s.cont(state);
+                                Log.e("Version",state);
+
                                 //loc="lat="+lat+" long="+lon;
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -143,11 +151,9 @@ public class Signup2 extends AppCompatActivity {
                         }
                     }
                 });
-
-
             }
             else {
-               ActivityCompat.requestPermissions(Signup2.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},44);
+               ActivityCompat.requestPermissions(Signup2.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
             }
         }
 
@@ -162,17 +168,19 @@ public class Signup2 extends AppCompatActivity {
         medsign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                storedata();
+                storedata(state,lat,lon);
             }
         });
     }
+
+
 
     @Override
     public void onBackPressed() {
         startActivity(new Intent(getApplicationContext(), Login.class));
     }
 
-    private void storedata() {
+    private void storedata(String state,Double lat,Double lon) {
         age=Age.getText().toString();
         weight=Weight.getText().toString();
         height=Height.getText().toString();
