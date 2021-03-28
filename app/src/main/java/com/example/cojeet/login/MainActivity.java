@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.content.Intent;
 
+import com.example.cojeet.Covidstats.Covidstats;
+import com.example.cojeet.Menu;
 import com.example.cojeet.R;
 
 public class MainActivity extends AppCompatActivity {

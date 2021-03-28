@@ -11,6 +11,7 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -38,6 +39,7 @@ public class Signup2 extends AppCompatActivity {
     RadioButton M,F,O,y,n,p,neg;
     Button medsign;
     DBHelper DB;
+    String latitude,longitude;
     RadioGroup gen,cov,vac;
     String medhelp,gender,Email,Name,Contact, mhis,cont,vaccine,corona,loc;
     CheckBox Fever,Dcough,Chestp,Tiredness,Diarrhoea,Conjectiv,Shortob,Anp,Lossos,Sorethroat,Allergy,Immuno,Preg,Blood,Disease,BP,Fibrosis,h1,h2,h3,h4;
@@ -45,6 +47,8 @@ public class Signup2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         loc="Not found";
+        lat=0.0;
+        lon=0.0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup2);
         Bundle bundle = getIntent().getExtras();
@@ -103,6 +107,7 @@ public class Signup2 extends AppCompatActivity {
         h4=findViewById(R.id.cb22);
 
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+
             if(getApplicationContext().checkSelfPermission(permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
                 fusedLocationProviderClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
                     @Override
@@ -110,9 +115,12 @@ public class Signup2 extends AppCompatActivity {
                         if(location!=null){
                             lat=location.getLatitude();
                             lon=location.getLongitude();
+                            latitude=lat.toString();
+                            longitude=lon.toString();
                         }
                     }
                 });
+
 
 
             }
@@ -128,6 +136,7 @@ public class Signup2 extends AppCompatActivity {
             String coun=addresses.get(0).getCountryName();
             String pc=addresses.get(0).getPostalCode();
             loc=add+","+area+","+city+","+coun+","+pc;
+            Log.d("mytag4",loc);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -263,7 +272,7 @@ public class Signup2 extends AppCompatActivity {
 
 
 
-        boolean x=DB.insertData2(Name,Email,Contact,age,gender,height,weight,corona,vaccine,medhelp,mhis,cont,loc);
+        boolean x=DB.insertData2(Name,Email,Contact,age,gender,height,weight,corona,vaccine,medhelp,mhis,cont,latitude,longitude);
         if(x==true)
         {
             Toast.makeText(Signup2.this,"Signed in successfully",Toast.LENGTH_LONG).show();

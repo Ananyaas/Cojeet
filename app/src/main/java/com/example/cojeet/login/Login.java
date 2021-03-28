@@ -41,7 +41,7 @@ public class Login extends AppCompatActivity {
 
         if(mAuth.getCurrentUser()!=null){ //put this inside
             Toast.makeText(getApplicationContext(),
-                    "Login error!!",
+                    "Welcome back user!!",
                     Toast.LENGTH_LONG)
                     .show();
             startActivity(new Intent(getApplicationContext(), Menu.class));
