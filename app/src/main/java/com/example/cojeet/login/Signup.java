@@ -56,46 +56,50 @@ public class Signup extends AppCompatActivity {
 
     }
 
+
+    private void storedata() {
+        String name2=name.getText().toString().trim();
+        String email2=email.getText().toString().trim();
+        String pwd2=pwd.getText().toString().trim();
+        String conpwd2=conpwd.getText().toString().trim();
+        String contact2=contact1.getText().toString().trim();
+
+        if(TextUtils.isEmpty(name2)){
+            name.setError("Field required");
+            return;
+        }
+        if(TextUtils.isEmpty(email2)){
+            email.setError("Field required");
+            return;
+        }
+        if(TextUtils.isEmpty(pwd2)){
+            pwd.setError("Field required");
+            return;
+        }
+        if(TextUtils.isEmpty(conpwd2)){
+            conpwd.setError("Field required");
+            return;
+        }
+        if(TextUtils.isEmpty(contact2)){
+            contact1.setError("Field required");
+            return;
+        }
+        if(pwd2.length()<6 ){
+            pwd.setError("Password size should be greater than or equal to 6 characters");
+            return;
+        }
+        if(conpwd2.length()<6 || pwd2.compareTo(conpwd2)!=0){
+            conpwd.setError("Password doesn't match");
+            return;
+        }
+
         @Override
         public void onBackPressed () {
             startActivity(new Intent(getApplicationContext(), Login.class));
+
         }
 
-        private void storedata () {
-            String name2 = name.getText().toString();
-            String email2 = email.getText().toString();
-            String pwd2 = pwd.getText().toString();
-            String conpwd2 = conpwd.getText().toString();
-            String contact2 = contact1.getText().toString();
-
-            if (TextUtils.isEmpty(name2)) {
-                name.setError("Field required");
-                return;
-            }
-            if (TextUtils.isEmpty(email2)) {
-                email.setError("Field required");
-                return;
-            }
-            if (TextUtils.isEmpty(pwd2)) {
-                pwd.setError("Field required");
-                return;
-            }
-            if (TextUtils.isEmpty(conpwd2)) {
-                conpwd.setError("Field required");
-                return;
-            }
-            if (TextUtils.isEmpty(contact2)) {
-                contact1.setError("Field required");
-                return;
-            }
-            if (pwd2.length() < 6) {
-                pwd.setError("Password size should be greater than or equal to 6 characters");
-                return;
-            }
-            if (conpwd2.length() < 6 || pwd2.compareTo(conpwd2) != 0) {
-                conpwd.setError("Password doesn't match");
-                return;
-            }
+        
             auth.createUserWithEmailAndPassword(email2, pwd2).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
