@@ -43,13 +43,14 @@
                     android:src="@drawable/hosp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="143dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:text="Hospitals Near Me"
+                    android:textSize="8sp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+
                     android:textStyle="bold">
 
                 </TextView>
@@ -86,13 +87,15 @@
                     android:src="@drawable/mapp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
+                    android:paddingBottom="5dp"
                     android:text="Covid Stats"
                     android:textAlignment="center"
+                    android:textSize="8sp"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+
                     android:textStyle="bold">
 
                 </TextView>
@@ -134,8 +137,10 @@
                     android:layout_gravity="center"
                     android:text="COVID Self Assessment"
                     android:textAlignment="center"
+                    android:paddingBottom="5dp"
+                    android:textSize="8sp"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+
                     android:textStyle="bold">
 
                 </TextView>
@@ -173,12 +178,14 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="57dp"
+                    android:layout_height="48dp"
                     android:layout_gravity="center"
                     android:text="Vaccination Stats"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:paddingBottom="5dp"
+                    android:textSize="8sp"
+
                     android:textStyle="bold">
 
                 </TextView>
@@ -215,13 +222,14 @@
                     android:src="@drawable/news" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="17dp"
+                    android:layout_width="89dp"
+                    android:layout_height="37dp"
                     android:layout_gravity="center"
+                    android:paddingBottom="5dp"
                     android:text="Covid News"
                     android:textAlignment="center"
+                    android:textSize="8sp"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
                     android:textStyle="bold">
 
                 </TextView>
@@ -259,13 +267,15 @@
                     android:src="@drawable/pro" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
                     android:layout_gravity="center"
+                    android:paddingBottom="5dp"
+
                     android:text="Edit Your Profile"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="8sp"
                     android:textStyle="bold">
 
                 </TextView>

@@ -1,4 +1,4 @@
-package com.example.cojeet;
+package com.example.cojeet.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.content.Intent;
 
-import com.example.cojeet.Covidnews.Covid_news;
-import com.example.cojeet.login.Login;
+import com.example.cojeet.Covidstats.Covidstats;
+import com.example.cojeet.Menu;
+import com.example.cojeet.R;
 
 public class MainActivity extends AppCompatActivity {
     Handler handler;
