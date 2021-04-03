@@ -22,12 +22,11 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
-
+//
 
 import com.example.cojeet.Menu;
 import com.example.cojeet.R;
-import com.example.cojeet.hospitals.Apidata.Example;
-import com.example.cojeet.hospitals.Apidata.Feature;
+
 import com.example.cojeet.hospitals.hospitalmodels.Adapter;
 
 import com.example.cojeet.login.Signup2;
@@ -82,7 +81,7 @@ public class Hospitals extends AppCompatActivity {
     FusedLocationProviderClient fusedLocationProviderClient;
 
     //List<com.example.cojeet.Covidstats.covidstatsapi.Covidstats> covistats=new ArrayList<>();
-    List<Feature> features = new ArrayList<>();
+
 
 
     @Override

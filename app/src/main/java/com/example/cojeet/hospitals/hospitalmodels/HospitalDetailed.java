@@ -51,7 +51,7 @@ public class HospitalDetailed extends AppCompatActivity {
         super.onBackPressed();
         Intent intent= new Intent(getApplicationContext(),Hospitals.class);
     }
-
+//
     private void Displaytrack(Double lat, Double lon, Double latitude, Double longitude) {
         try {
             Uri uri= Uri.parse("https://www.google.co.in/maps/dir/"+lat.toString()+","+lon.toString()+"/"+latitude.toString()+","+longitude.toString());
