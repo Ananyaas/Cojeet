@@ -2,13 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cojeet">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
@@ -17,9 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cojeet">
-        <activity android:name=".login.EditProfile"></activity>
+        <activity android:name=".hospitals.hospitalmodels.HospitalDetailed">
+        </activity>
+        <activity android:name=".hospitals.Hospitals" />
+        <activity android:name=".login.EditProfile" />
         <activity android:name=".Covidstats.Covidstats" />
-     
         <activity android:name=".login.Signup2" />
         <activity android:name=".symptomassessment" />
         <activity android:name=".login.forgotpassword" />
@@ -33,7 +35,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Covidstats.Covidstats" />
+
         <activity
             android:name=".Covidnews.Covid_news"
             android:screenOrientation="locked"

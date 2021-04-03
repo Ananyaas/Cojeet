@@ -9,6 +9,7 @@ import android.content.Intent;
 import com.example.cojeet.Covidstats.Covidstats;
 import com.example.cojeet.Menu;
 import com.example.cojeet.R;
+import com.example.cojeet.hospitals.Hospitals;
 
 public class MainActivity extends AppCompatActivity {
     Handler handler;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(MainActivity.this, Login.class);
+                Intent intent=new Intent(MainActivity.this, Menu.class);
                 startActivity(intent);
                 finish();
             }
