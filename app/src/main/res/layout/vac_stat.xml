@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/vState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="State"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:layout_marginLeft="8dp"
+            />
+        <TextView
+            android:id="@+id/vno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vaccinated People"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:layout_below="@+id/vState"
+            android:layout_marginLeft="8dp"
+          />
+
+        <TextView
+            android:id="@+id/vnoval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vState"
+            android:layout_marginLeft="163dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@id/vno"
+            android:padding="2dp"
+            android:text="Value"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High Risk People"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:layout_below="@+id/vno"
+            android:layout_marginLeft="8dp"
+            />
+
+        <TextView
+            android:id="@+id/hrval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vnoval"
+            android:layout_marginLeft="177dp"
+
+            android:layout_marginTop="-2dp"
+            android:layout_toRightOf="@id/hr"
+            android:padding="2dp"
+            android:text="Value"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,4 +1,4 @@
- package com.example.cojeet.login;
+package com.example.cojeet.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,9 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -24,7 +22,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.example.cojeet.MainActivity;
+import com.example.cojeet.login.MainActivity;
 import com.example.cojeet.Menu;
 import com.example.cojeet.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -53,17 +51,12 @@ public class Signup2 extends AppCompatActivity {
     RadioButton M,F,O,y,n,p,neg;
     Button medsign;
     DBHelper DB;
-    String latitude,longitude;
     RadioGroup gen,cov,vac;
-    String medhelp,gender,Email,Name,Contact, mhis,cont,vaccine,corona,loc,age,height,weight,state;
+    String medhelp,gender,Email,Name,Contact, mhis="*",cont,vaccine,corona,loc,age,height,weight,state;
     CheckBox Fever,Dcough,Chestp,Tiredness,Diarrhoea,Conjectiv,Shortob,Anp,Lossos,Sorethroat,Allergy,Immuno,Preg,Blood,Disease,BP,Fibrosis,h1,h2,h3,h4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        loc="Not found";
-        lat=0.0;
-        lon=0.0;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup2);
@@ -74,7 +67,7 @@ public class Signup2 extends AppCompatActivity {
         ref= FirebaseDatabase.getInstance().getReference().child("User_Detail");
         ud=new User_Detail();
 
-        loc="delhi";
+        //loc="delhi";
         s=new States();
         s.init();
 
@@ -129,23 +122,16 @@ public class Signup2 extends AppCompatActivity {
         h4=findViewById(R.id.cb22);
 
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-
             Log.e("Version","Correct");
             if(ActivityCompat.checkSelfPermission(Signup2.this,
                     permission.ACCESS_FINE_LOCATION )== PackageManager.PERMISSION_GRANTED){
                 Log.e("Version","Permission Given");
                 fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-
-
-            if(getApplicationContext().checkSelfPermission(permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
-                fusedLocationProviderClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
-
                     @Override
                     public void onComplete(@NonNull Task<Location> task) {
                         Location location=task.getResult();
                         //Log.e("Version","latitude= "+lat);
                         if(location!=null){
-
                             Geocoder geocoder=new Geocoder(Signup2.this,Locale.getDefault());
                             Log.e("Version","location given");
                             try {
@@ -165,35 +151,10 @@ public class Signup2 extends AppCompatActivity {
                         }
                     }
                 });
-
-                            lat=location.getLatitude();
-                            lon=location.getLongitude();
-                            latitude=lat.toString();
-                            longitude=lon.toString();
-                        }
-                    }
-                });
-
-
-
             }
             else {
-               ActivityCompat.requestPermissions(Signup2.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
+                ActivityCompat.requestPermissions(Signup2.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
             }
-        }
-
-        try{
-            addresses=geocoder.getFromLocation(lat,lon,1);
-            String add=addresses.get(0).getAddressLine(0);
-            String area=addresses.get(0).getLocality();
-            String city=addresses.get(0).getAdminArea();
-            String coun=addresses.get(0).getCountryName();
-            String pc=addresses.get(0).getPostalCode();
-            loc=add+","+area+","+city+","+coun+","+pc;
-            Log.d("mytag4",loc);
-        }
-        catch (Exception e){
-            e.printStackTrace();
         }
 
 
@@ -204,16 +165,12 @@ public class Signup2 extends AppCompatActivity {
         medsign=findViewById(R.id.signupbutton2);
         DB = new DBHelper(this);
 
-
         medsign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 storedata(state,lat,lon);
             }
         });
-
-        medsign.setOnClickListener(v -> storedata());
-
     }
 
 
@@ -249,7 +206,7 @@ public class Signup2 extends AppCompatActivity {
             Toast.makeText(Signup2.this,"please select gender",Toast.LENGTH_SHORT).show();
             return ;
         }
-        
+
         if(M.isChecked()){
             gender=M.getText().toString();
         }
@@ -268,7 +225,7 @@ public class Signup2 extends AppCompatActivity {
             corona=p.getText().toString().trim();
         }
         if(neg.isChecked()){
-            corona=n.getText().toString().trim();
+            corona=neg.getText().toString().trim();
         }
         if (vac.getCheckedRadioButtonId() == -1)
         {
@@ -333,7 +290,6 @@ public class Signup2 extends AppCompatActivity {
         if(Fibrosis.isChecked()){
             mhis+=Fibrosis.getText()+"/";
         }
-
         if(h1.isChecked()){
             cont+=h1.getText().toString();
         }
@@ -367,20 +323,10 @@ public class Signup2 extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), Menu.class));
 
       /* boolean x=DB.insertData2(Name,Email,Contact,age,gender,height,weight,corona,vaccine,medhelp,mhis,cont,loc);
-
-        if(h1.isChecked()||h2.isChecked()||h3.isChecked()||h4.isChecked()){
-            cont="yes";
-        }
-
-
-
-        boolean x=DB.insertData2(Name,Email,Contact,age,gender,height,weight,corona,vaccine,medhelp,mhis,cont,latitude,longitude);
-
         if(x==true)
         {
             Toast.makeText(Signup2.this,"Signed in successfully",Toast.LENGTH_LONG).show();
             startActivity(new Intent(getApplicationContext(), Menu.class));
-
         }
         else
             Toast.makeText(Signup2.this,loc+"Error",Toast.LENGTH_LONG).show(); */

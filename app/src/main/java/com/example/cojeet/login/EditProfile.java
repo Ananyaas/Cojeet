@@ -43,7 +43,7 @@ public class EditProfile extends AppCompatActivity {
     User_Detail ud;
     RadioGroup gen,cov,vac;
 
-    String medhelp,gender,Email,Name,Contact, mhis,cont,vaccine,corona,loc,age,weight,height;
+    String medhelp,gender,Email,Name,Contact, mhis="*",cont,vaccine,corona,loc,age,weight,height;
     CheckBox Fever,Dcough,Chestp,Tiredness,Diarrhoea,Conjectiv,Shortob,Anp,Lossos,Sorethroat,Allergy,Immuno,Preg,Blood,Disease,BP,Fibrosis,h1,h2,h3,h4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,7 +119,7 @@ public class EditProfile extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 String ss=snapshot.getValue().toString();
-                String s[]=ss.split("=");
+                String[] s =ss.split("=");
                 s1=s[0].substring(1);
                 ud.setRef(s1);
                 Name=snapshot.child(s1).child("username").getValue().toString();
@@ -294,7 +294,7 @@ public class EditProfile extends AppCompatActivity {
 
     public void updatedata(String ref) {
 
-        String pa,cpa,medhelp1=null,gender1=null,Name1=null,Contact1=null, mhis1=null,cont1=null,vaccine1=null,corona1=null,loc1=null,age1=null,weight1=null,height1=null;
+        String pa,cpa,medhelp1=null,gender1=null,Name1=null,Contact1=null, mhis1="*",cont1=null,vaccine1=null,corona1=null,loc1=null,age1=null,weight1=null,height1=null;
 
         age1=Age.getText().toString();
         weight1=Weight.getText().toString();

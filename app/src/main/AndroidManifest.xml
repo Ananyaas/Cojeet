@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cojeet">
-        <activity android:name=".login.EditProfile"></activity>
+        <activity android:name=".Vaccinationstats.VaccinationStatistics"></activity>
+        <activity android:name=".login.EditProfile" />
         <activity android:name=".Covidstats.Covidstats" />
      
         <activity android:name=".login.Signup2" />

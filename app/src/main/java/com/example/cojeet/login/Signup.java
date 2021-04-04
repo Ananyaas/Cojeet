@@ -93,11 +93,7 @@ public class Signup extends AppCompatActivity {
             return;
         }
 
-        @Override
-        public void onBackPressed () {
-            startActivity(new Intent(getApplicationContext(), Login.class));
 
-        }
 
         
             auth.createUserWithEmailAndPassword(email2, pwd2).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -119,5 +115,10 @@ public class Signup extends AppCompatActivity {
                 }
             });
         }
+    @Override
+    public void onBackPressed () {
+        startActivity(new Intent(getApplicationContext(), Login.class));
+
+    }
 
     }
