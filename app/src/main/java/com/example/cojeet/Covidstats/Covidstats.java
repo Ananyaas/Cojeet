@@ -139,8 +139,8 @@ public class Covidstats extends AppCompatActivity {
                 description.setText("states");
 
                 PieData barData=new PieData(barDataSet);
-                mbarchart.setEntryLabelTextSize(3f);
-                barData.setValueTextSize(3f);
+                mbarchart.setEntryLabelTextSize(4f);
+                barData.setValueTextSize(1f);
                 mbarchart.setData(barData);
                 mbarchart.setRotationEnabled(false);
 

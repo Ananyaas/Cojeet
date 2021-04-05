@@ -11,17 +11,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 import com.example.cojeet.Menu;
-
 import com.example.cojeet.R;
+import com.example.cojeet.hospitals.Hospitals;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Signup extends AppCompatActivity {
-    EditText name, email, pwd, conpwd, contact1;
+    EditText name,email,pwd,conpwd,contact1;
     Button signup1;
     FirebaseAuth auth;
 
@@ -29,33 +28,32 @@ public class Signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        name = findViewById(R.id.username);
-        email = findViewById(R.id.signupemail);
-        pwd = findViewById(R.id.signuppassword);
-        conpwd = findViewById(R.id.signupconfpass);
-        contact1 = findViewById(R.id.contact);
-        signup1 = findViewById(R.id.signupbutton);
-        auth = FirebaseAuth.getInstance();
+        name=findViewById(R.id.username);
+        email=findViewById(R.id.signupemail);
+        pwd=findViewById(R.id.signuppassword);
+        conpwd=findViewById(R.id.signupconfpass);
+        contact1=findViewById(R.id.contact);
+        signup1=findViewById(R.id.signupbutton);
+        auth=FirebaseAuth.getInstance();
 
-        if(auth.getCurrentUser()!=null){ //put this inside
-            Toast.makeText(getApplicationContext(),
-                    "Welcome back user!!",
-                    Toast.LENGTH_LONG)
-                    .show();
+      if(auth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(), Menu.class));
         }
 
-            signup1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    storedata();
-                }
-            });
-
+        signup1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                storedata();
+            }
+        });
 
 
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), Login.class));
+    }
 
     private void storedata() {
         String name2=name.getText().toString().trim();
@@ -95,8 +93,9 @@ public class Signup extends AppCompatActivity {
 
 
 
+
         
-            auth.createUserWithEmailAndPassword(email2, pwd2).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+           /* auth.createUserWithEmailAndPassword(email2, pwd2).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
@@ -119,6 +118,29 @@ public class Signup extends AppCompatActivity {
     public void onBackPressed () {
         startActivity(new Intent(getApplicationContext(), Login.class));
 
-    }
+    }*/
+
+
+        auth.createUserWithEmailAndPassword(email2,pwd2).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+
+                    Toast.makeText(Signup.this,"Welcome user",Toast.LENGTH_LONG).show();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name", name2);
+                    bundle.putString("Email", email2);
+                    bundle.putString("Contact", contact2);
+                    Intent intent=new Intent(Signup.this, Signup2.class);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(Signup.this,"Something went wrong",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
     }
+
+}

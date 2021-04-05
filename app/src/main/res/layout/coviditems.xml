@@ -55,6 +55,7 @@
                         android:layout_height="wrap_content"
                         android:text="Total Infected"
                         android:textSize="15dp"
+                        android:textStyle="bold"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#606060"
                         android:id="@+id/totalInfected"/>
@@ -82,6 +83,7 @@
                         android:layout_height="wrap_content"
                         android:text="Total Recovered"
                         android:textSize="15dp"
+                        android:textStyle="bold"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#606060"
                         android:id="@+id/recovered"/>
@@ -90,6 +92,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="5 hour ago"
+                        android:textStyle="bold"
                         android:gravity="right"
                         android:textSize="15dp"
                         android:fontFamily="sans-serif-light"
@@ -109,6 +112,7 @@
                         android:layout_height="wrap_content"
                         android:text="Total deceased"
                         android:textSize="15dp"
+                        android:textStyle="bold"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#606060"
                         android:id="@+id/deceased"/>
@@ -119,9 +123,95 @@
                         android:text="5 hour ago"
                         android:gravity="right"
                         android:textSize="15dp"
+                        android:textStyle="bold"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#606060"
                         android:id="@+id/deceased1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Infected"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="#606060"
+                        android:id="@+id/newinf"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5 hour ago"
+                        android:gravity="right"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="#606060"
+                        android:id="@+id/newinf1"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Recovered"
+                        android:textSize="15dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="#606060"
+                        android:textStyle="bold"
+                        android:id="@+id/newrec"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5 hour ago"
+                        android:gravity="right"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="#606060"
+                        android:id="@+id/newrec1"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New deceased"
+                        android:textSize="15dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="#606060"
+                        android:textStyle="bold"
+                        android:id="@+id/newdec"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5 hour ago"
+                        android:gravity="right"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="#606060"
+                        android:id="@+id/newdec1"/>
                 </LinearLayout>
 
             </LinearLayout>

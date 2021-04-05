@@ -1,6 +1,7 @@
 package com.example.cojeet.Covidnews.covidnewsapi;
 
 import com.example.cojeet.Covidnews.models.Headlines;
+import com.example.cojeet.Covidstats.Covidstats;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

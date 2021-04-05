@@ -92,7 +92,7 @@ public class Signup2 extends AppCompatActivity {
         vac=findViewById(R.id.vaccination);
 
         //Symptom Checkboxes
-
+////
         Fever=findViewById(R.id.cb1);
         Dcough=findViewById(R.id.cb2);
         Tiredness=findViewById(R.id.cb3);

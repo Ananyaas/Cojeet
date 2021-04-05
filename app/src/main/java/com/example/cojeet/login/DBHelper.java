@@ -72,7 +72,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("Contact_history",cont);
 
         contentValues.put("health_condition",mhis);
-        //contentValues.put("location",loc);
+
 
         contentValues.put("Latitude",latitude);
         contentValues.put("Longitude",longitude);
