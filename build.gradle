@@ -21,6 +21,9 @@ allprojects {
         maven {url 'https://esri.jfrog.io/artifactory/arcgis'}
         google()
         jcenter()
+        maven{
+            url "https://maven.google.com"
+        }
     }
 }
 

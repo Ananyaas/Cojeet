@@ -10,7 +10,11 @@ import android.view.View;
 
 import com.example.cojeet.Covidnews.Covid_news;
 import com.example.cojeet.Covidstats.Covidstats;
+
+import com.example.cojeet.Vaccinationstats.VaccinationStatistics;
+
 import com.example.cojeet.hospitals.Hospitals;
+
 import com.example.cojeet.login.EditProfile;
 import com.example.cojeet.login.Signup;
 
@@ -64,7 +68,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.vaccine:
-                intent=new Intent(this,Signup.class);
+                intent=new Intent(this, VaccinationStatistics.class);
                 startActivity(intent);
                 break;
             case R.id.covidnews:

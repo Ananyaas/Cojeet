@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class States {
 
-    ArrayList<String> sl = new ArrayList<String>();
+   public ArrayList<String> sl = new ArrayList<String>();
 
     public void init() {
         sl.add("Andhra Pradesh");

@@ -90,6 +90,37 @@ public class Signup extends AppCompatActivity {
             conpwd.setError("Password doesn't match");
             return;
         }
+
+
+
+
+        
+           /* auth.createUserWithEmailAndPassword(email2, pwd2).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+
+                        Toast.makeText(Signup.this, "Welcome user", Toast.LENGTH_LONG).show();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("Name", name2);
+                        bundle.putString("Email", email2);
+                        bundle.putString("Contact", contact2);
+                        Intent intent = new Intent(Signup.this, Signup2.class);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(Signup.this, "Something went wrong", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        }
+    @Override
+    public void onBackPressed () {
+        startActivity(new Intent(getApplicationContext(), Login.class));
+
+    }*/
+
+
         auth.createUserWithEmailAndPassword(email2,pwd2).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -109,6 +140,7 @@ public class Signup extends AppCompatActivity {
                 }
             }
         });
+
     }
 
 }

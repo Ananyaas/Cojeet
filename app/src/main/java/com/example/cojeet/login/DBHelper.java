@@ -99,9 +99,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor=DB.rawQuery("Select * from USER_DETAILS where Email = ?",new String[]{email});
         if(cursor.getCount()>0){
             long result = DB.update("USER_DETAILS",contentValues,"Email=?",new String[]{email});
-            if(result==-1) return false;
-            else
-                return true;
+            return result != -1;
         }
         else
             return false;
