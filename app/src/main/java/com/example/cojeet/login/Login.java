@@ -39,13 +39,13 @@ public class Login extends AppCompatActivity {
         Btn = findViewById(R.id.loginbutton);
         progressbar = findViewById(R.id.logprogressBar);
 
-        if(mAuth.getCurrentUser()!=null){ //put this inside
+        /*if(mAuth.getCurrentUser()!=null){ //put this inside
             Toast.makeText(getApplicationContext(),
                     "Welcome back user!!",
                     Toast.LENGTH_LONG)
                     .show();
             startActivity(new Intent(getApplicationContext(), Menu.class));
-        }
+        }*/
         // Set on Click Listener on Sign-in button
         Btn.setOnClickListener(new View.OnClickListener() {
             @Override

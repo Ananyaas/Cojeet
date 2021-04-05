@@ -10,15 +10,15 @@
     >
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
 
         <TextView
             android:id="@+id/title2"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:gravity="center"
@@ -27,9 +27,9 @@
             android:textStyle="bold"
 
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteY="57dp" />
 
         <TextView
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="32dp"
 
 
             android:gravity="left"
@@ -68,15 +68,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eyp" />
 
+
         <EditText
             android:id="@+id/uname"
             android:layout_width="116dp"
             android:layout_height="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/pass"
+            android:layout_marginTop="20dp"
 
-
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginRight="88dp"
+            android:autofillHints=""
             android:fontFamily="sans-serif-light"
 
             android:inputType="text"
@@ -89,16 +89,16 @@
             android:textColorLink="@color/purple_700"
             android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/un"
             app:layout_constraintTop_toBottomOf="@+id/eyp"
-            tools:ignore="MissingConstraints"
-            android:autofillHints="" />
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/pas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="44dp"
 
 
             android:gravity="left"
@@ -118,24 +118,22 @@
             android:layout_height="36dp"
 
 
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginRight="88dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/passc"
             android:fontFamily="sans-serif-light"
             android:hint="pass"
             android:inputType="text"
             android:textColor="@color/purple_700"
-
             android:textColorHighlight="#FF7DC1FD"
-
             android:textColorHint="#100F0F"
 
             android:textColorLink="@color/purple_700"
+
             android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pas"
             app:layout_constraintTop_toBottomOf="@+id/uname"
             tools:ignore="MissingConstraints" />
-
 
         <TextView
             android:id="@+id/pasc"
@@ -162,21 +160,20 @@
 
 
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginRight="88dp"
             android:fontFamily="sans-serif-light"
-
-
             android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/phn"
 
             android:textColor="@color/purple_700"
 
             android:textColorHighlight="#FF7DC1FD"
 
             android:textColorHint="#100F0F"
+
             android:textColorLink="@color/purple_700"
             android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pasc"
             app:layout_constraintTop_toBottomOf="@+id/pass"
             tools:ignore="MissingConstraints" />
 
@@ -185,97 +182,105 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="4dp"
 
 
-            android:layout_marginLeft="4dp"
 
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="20dp"
 
             android:gravity="left"
 
             android:text="Phone"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/ed1"
+            app:layout_constraintEnd_toStartOf="@+id/phn"
+
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pasc" />
+            app:layout_constraintTop_toBottomOf="@+id/pasc"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/phn"
-            android:layout_width="110dp"
-            android:layout_height="37dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="96dp"
-            android:layout_marginRight="96dp"
-            android:fontFamily="sans-serif-light"
+            android:layout_width="116dp"
+            android:layout_height="38dp"
 
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-light"
             android:inputType="text"
             android:textColor="@color/purple_700"
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
             android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/ed2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pasc" />
+            app:layout_constraintStart_toEndOf="@+id/ph"
+            app:layout_constraintTop_toBottomOf="@+id/passc"
+
+            tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/ed1"
             android:layout_width="116dp"
             android:layout_height="36dp"
 
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="32dp"
 
-            android:layout_marginTop="76dp"
             android:fontFamily="sans-serif-light"
-
+            android:hint="age"
             android:inputType="text"
             android:textColor="@color/purple_700"
+
             android:textColorHighlight="#FF7DC1FD"
+
             android:textColorHint="#100F0F"
-
             android:textColorLink="@color/purple_700"
-
             android:textSize="12dp"
-            app:layout_constraintEnd_toStartOf="@id/ed4"
+            app:layout_constraintBottom_toTopOf="@+id/corona"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ph"
+            app:layout_constraintTop_toBottomOf="@+id/phn"
+            app:layout_constraintVertical_bias="1.0"
             tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/ed4"
             android:layout_width="110dp"
             android:layout_height="37dp"
-            android:layout_marginTop="3dp"
-            android:fontFamily="sans-serif-light"
+            android:layout_marginBottom="32dp"
 
+            android:fontFamily="sans-serif-light"
             android:inputType="text"
             android:textColor="@color/purple_700"
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
             android:textSize="12dp"
-            app:layout_constraintBottom_toTopOf="@id/ed2"
+            app:layout_constraintBottom_toTopOf="@+id/corona"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ed1"
-            app:layout_constraintTop_toBottomOf="@+id/phn" />
+            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintStart_toEndOf="@+id/ed2"
+            app:layout_constraintTop_toBottomOf="@+id/phn"
+            app:layout_constraintVertical_bias="1.0" />
 
         <EditText
             android:id="@+id/ed2"
             android:layout_width="118dp"
             android:layout_height="39dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="12dp"
 
             android:fontFamily="sans-serif-light"
-
             android:inputType="text"
             android:textColor="@color/purple_700"
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
+            app:layout_constraintTop_toBottomOf="@+id/phn"
+            app:layout_constraintBottom_toTopOf="@+id/corona"
             android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/ed1"
 
-            app:layout_constraintEnd_toStartOf="@id/ed4"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ed1" />
+             />
 
         <TextView
             android:id="@+id/corona"
@@ -305,8 +310,8 @@
 
             <RadioButton
                 android:id="@+id/csp"
-                android:layout_width="89dp"
-                android:layout_height="34dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:hint="Positive"
                 android:text="Positive"
@@ -317,8 +322,8 @@
 
             <RadioButton
                 android:id="@+id/csn"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:hint="Negative"
                 android:text="Negative"
                 android:textColorHint="#100F0F"
@@ -354,10 +359,11 @@
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/vaccstatus">
+
             <RadioButton
                 android:id="@+id/yes"
-                android:layout_width="89dp"
-                android:layout_height="34dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:hint="Vaccinated"
                 android:text="Vaccinated"
                 android:textColorHint="#100F0F"
@@ -367,8 +373,8 @@
 
             <RadioButton
                 android:id="@+id/no"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:hint="Not Vaccinated"
                 android:text="Not Vaccinated"
                 android:textColorHint="#100F0F"
@@ -406,8 +412,8 @@
 
             <RadioButton
                 android:id="@+id/rb13"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:hint="Female"
                 android:text="Female"
                 android:textColorHint="#100F0F"
@@ -417,7 +423,7 @@
 
             <RadioButton
                 android:id="@+id/rb12"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:hint="Male"
                 android:text="Male"
@@ -428,8 +434,8 @@
 
             <RadioButton
                 android:id="@+id/rb11"
-                android:layout_width="89dp"
-                android:layout_height="34dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:hint="Other"
                 android:text="Other"
                 android:textColorHint="#100F0F"
@@ -469,7 +475,6 @@
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
             android:textSize="12dp"
-
 
 
             app:layout_constraintStart_toStartOf="parent"
@@ -562,10 +567,10 @@
             android:textColorLink="@color/purple_700"
             android:textSize="12dp"
 
+            app:layout_constraintBottom_toTopOf="@+id/cb9"
             app:layout_constraintEnd_toEndOf="parent"
 
-
-            app:layout_constraintHorizontal_bias="0.589"
+            app:layout_constraintHorizontal_bias="0.661"
             app:layout_constraintStart_toEndOf="@id/cb3"
             app:layout_constraintTop_toBottomOf="@+id/cb7" />
 
@@ -589,11 +594,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb3" />
 
+
         <CheckBox
             android:id="@+id/cb9"
             android:layout_width="124dp"
             android:layout_height="37dp"
-            android:layout_marginBottom="5dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
             android:text="Aches and Pains"
@@ -602,11 +607,10 @@
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
             android:textSize="12dp"
-
+            app:layout_constraintBottom_toTopOf="@+id/cb10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/cb4"
             app:layout_constraintTop_toBottomOf="@+id/cb8" />
-
 
         <CheckBox
             android:id="@+id/cb5"
@@ -631,21 +635,22 @@
             android:id="@+id/cb10"
             android:layout_width="160dp"
             android:layout_height="52dp"
-            android:layout_marginStart="76dp"
-            android:layout_marginLeft="76dp"
-            android:layout_marginTop="4dp"
+
             android:ems="10"
             android:fontFamily="sans-serif-light"
             android:text="Loss of speech or movement"
             android:textColor="#100F0F"
+
             android:textColorHighlight="#FF7DC1FD"
 
             android:textColorHint="#100F0F"
-
             android:textColorLink="@color/purple_700"
             android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@id/cb5"
-            app:layout_constraintTop_toBottomOf="@+id/cb9" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.794"
+            app:layout_constraintStart_toEndOf="@+id/cb5"
+            app:layout_constraintTop_toBottomOf="@+id/cb9"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/medhis"
@@ -665,8 +670,8 @@
 
         <CheckBox
             android:id="@+id/cb12"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -679,14 +684,15 @@
             android:textSize="12dp"
 
 
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/medhis"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:ignore="MissingConstraints" />
 
         <CheckBox
             android:id="@+id/cb13"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -699,13 +705,15 @@
             android:textSize="12dp"
 
 
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb12"
             tools:ignore="MissingConstraints" />
 
         <CheckBox
             android:id="@+id/cb14"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -718,13 +726,15 @@
             android:textSize="12dp"
 
 
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb13"
             tools:ignore="MissingConstraints" />
 
         <CheckBox
             android:id="@+id/cb15"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -737,13 +747,15 @@
             android:textSize="12dp"
 
 
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb14"
             tools:ignore="MissingConstraints" />
 
         <CheckBox
             android:id="@+id/cb16"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -756,13 +768,15 @@
             android:textSize="12dp"
 
 
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb15"
             tools:ignore="MissingConstraints" />
 
         <CheckBox
             android:id="@+id/cb17"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -771,8 +785,10 @@
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-
             android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
 
 
             app:layout_constraintTop_toBottomOf="@+id/cb16"
@@ -780,8 +796,8 @@
 
         <CheckBox
             android:id="@+id/cb18"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -792,9 +808,11 @@
             android:textColorLink="@color/purple_700"
 
             android:textSize="12dp"
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb17"
             tools:ignore="MissingConstraints" />
+
         <TextView
             android:id="@+id/conhis"
             android:layout_width="match_parent"
@@ -813,8 +831,8 @@
 
         <CheckBox
             android:id="@+id/cb19"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -823,8 +841,10 @@
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-
             android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
 
 
             app:layout_constraintTop_toBottomOf="@+id/conhis"
@@ -832,8 +852,8 @@
 
         <CheckBox
             android:id="@+id/cb20"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -842,8 +862,9 @@
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-
             android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
 
 
             app:layout_constraintTop_toBottomOf="@+id/cb19"
@@ -851,8 +872,8 @@
 
         <CheckBox
             android:id="@+id/cb21"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -861,8 +882,9 @@
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-
             android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
 
 
             app:layout_constraintTop_toBottomOf="@+id/cb20"
@@ -870,8 +892,8 @@
 
         <CheckBox
             android:id="@+id/cb22"
-            android:layout_width="400dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
             android:fontFamily="sans-serif-light"
@@ -880,8 +902,9 @@
             android:textColorHighlight="#FF7DC1FD"
             android:textColorHint="#100F0F"
             android:textColorLink="@color/purple_700"
-
             android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
 
 
             app:layout_constraintTop_toBottomOf="@+id/cb21"
@@ -897,6 +920,7 @@
             app:layout_constraintEnd_toStartOf="@id/logout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cb22" />
+
         <Button
             android:id="@+id/logout"
             android:layout_width="wrap_content"
@@ -906,10 +930,7 @@
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/signupbutton2"
-            app:layout_constraintTop_toBottomOf="@id/cb22"
-           />
-
-
+            app:layout_constraintTop_toBottomOf="@id/cb22" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

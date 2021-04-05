@@ -1,84 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="4dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="4dp">
-    <RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Vaccinationstats.VaccinationStatistics"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp">
+        android:layout_margin="10dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="4dp">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/vState"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:text="State"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:padding="2dp"
-            android:layout_marginLeft="8dp"
+            android:fontFamily="sans-serif-black"
+            android:justificationMode="inter_word"
+            android:padding="10dp"
+            android:text="STATE"
+            android:textColor="@color/purple_700"
+            android:textSize="20dp"
             />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="10dp">
         <TextView
             android:id="@+id/vno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Vaccinated People"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+
+            android:fontFamily="sans-serif-light"
+
             android:textStyle="bold"
-            android:padding="2dp"
-            android:layout_below="@+id/vState"
-            android:layout_marginLeft="8dp"
+            android:textColor="#606060"
+            android:textSize="15dp"
           />
+
 
         <TextView
             android:id="@+id/vnoval"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/vState"
-            android:layout_marginLeft="163dp"
-            android:layout_marginTop="2dp"
-            android:layout_toRightOf="@id/vno"
-            android:padding="2dp"
-            android:text="Value"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
+            android:fontFamily="sans-serif-light"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:hint="5 hour ago"
+            android:textColor="#606060"
+            android:textSize="15dp"
+            android:text="Value" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="10dp">
         <TextView
             android:id="@+id/hr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="High Risk People"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:fontFamily="sans-serif-light"
+
             android:textStyle="bold"
-            android:padding="2dp"
-            android:layout_below="@+id/vno"
-            android:layout_marginLeft="8dp"
+            android:textColor="#606060"
+            android:textSize="15dp"
             />
 
         <TextView
             android:id="@+id/hrval"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/vnoval"
-            android:layout_marginLeft="177dp"
-
-            android:layout_marginTop="-2dp"
-            android:layout_toRightOf="@id/hr"
-            android:padding="2dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:hint="5 hour ago"
+            android:textColor="#606060"
+            android:textSize="15dp"
             android:text="Value"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-
+            />
+    </LinearLayout>
+    </LinearLayout>
+    </FrameLayout>
+    </androidx.cardview.widget.CardView>
     </RelativeLayout>
-
-
-</androidx.cardview.widget.CardView>
