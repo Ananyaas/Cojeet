@@ -29,10 +29,11 @@
             android:id="@+id/signuptitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="gravity"
             android:layout_marginTop="16dp"
+            android:paddingBottom="16dp"
             android:gravity="end"
-            android:text="HOSPITALS NEAR ME"
+            android:text="HOSPITALS\nNEAR ME\n"
+            android:textAlignment="gravity"
 
             android:textStyle="bold" />
 

@@ -40,6 +40,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.totalactive.setText(Integer.toString(a.getTotalInfected()));
         holder.totalrecover.setText(Integer.toString(a.getRecovered()));
         holder.totaldeath.setText(Integer.toString(a.getDeceased()));
+        holder.tnewinf.setText(Integer.toString(a.getNewInfected()));
+        holder.tnewrec.setText(Integer.toString(a.getNewRecovered()));
+        holder.tnewdec.setText(Integer.toString(a.getNewDeceased()));
 
 
     }
@@ -50,13 +53,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView state,totalactive,totalrecover,totaldeath;
+        TextView state,totalactive,totalrecover,totaldeath,tnewinf,tnewrec,tnewdec;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             state=itemView.findViewById(R.id.statetitle);
             totalactive=itemView.findViewById(R.id.totalInfected1);
             totalrecover=itemView.findViewById(R.id.recovered1);
             totaldeath=itemView.findViewById(R.id.deceased1);
+            tnewinf=itemView.findViewById(R.id.newinf1);
+            tnewrec=itemView.findViewById(R.id.newrec1);
+            tnewdec=itemView.findViewById(R.id.newdec1);
         }
     }
 }

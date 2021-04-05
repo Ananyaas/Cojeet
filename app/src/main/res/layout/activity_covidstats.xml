@@ -98,6 +98,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:text="Active Cases"
+                            android:textStyle="bold"
                             android:textColor="#606060"
                             android:textSize="15dp" />
 
@@ -107,6 +108,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:gravity="right"
+                            android:textStyle="bold"
                             android:hint="5 hour ago"
                             android:textColor="#606060"
                             android:textSize="15dp" />
@@ -125,6 +127,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:text="Recovered Cases"
+                            android:textStyle="bold"
                             android:textColor="#606060"
                             android:textSize="15dp" />
 
@@ -135,6 +138,7 @@
                             android:fontFamily="sans-serif-light"
                             android:gravity="right"
                             android:hint="5 hour ago"
+                            android:textStyle="bold"
                             android:textColor="#606060"
                             android:textSize="15dp" />
                     </LinearLayout>
@@ -152,6 +156,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:text="Death cases"
+                            android:textStyle="bold"
                             android:textColor="#606060"
                             android:textSize="15dp" />
 
@@ -161,6 +166,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:gravity="right"
+                            android:textStyle="bold"
                             android:hint="5 hour ago"
                             android:textColor="#606060"
                             android:textSize="15dp" />
@@ -179,6 +185,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:text="Total Cases"
+                            android:textStyle="bold"
                             android:textColor="#606060"
                             android:textSize="15dp" />
 
@@ -188,6 +195,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:gravity="right"
+                            android:textStyle="bold"
                             android:hint="5 hour ago"
                             android:textColor="#606060"
                             android:textSize="15dp" />
@@ -209,6 +217,7 @@
                             android:fontFamily="sans-serif-light"
                             android:text="Previous Day Tests"
                             android:textColor="#606060"
+                            android:textStyle="bold"
                             android:textSize="15dp" />
 
                         <TextView
@@ -218,6 +227,7 @@
                             android:fontFamily="sans-serif-light"
                             android:gravity="right"
                             android:hint="5 hour ago"
+                            android:textStyle="bold"
                             android:textColor="#606060"
                             android:textSize="15dp" />
 
@@ -237,6 +247,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:text="Last Updated"
+                            android:textStyle="bold"
                             android:textColor="#606060"
                             android:textSize="15dp" />
 
@@ -246,6 +257,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:gravity="right"
+                            android:textStyle="bold"
                             android:hint="5 hour ago"
                             android:textColor="#606060"
                             android:textSize="15dp" />
