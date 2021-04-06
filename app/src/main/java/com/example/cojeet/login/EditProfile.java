@@ -229,7 +229,29 @@ public class EditProfile extends AppCompatActivity {
                     h4.setChecked(true);
 
                // loc= snapshot.child("location").getValue().toString();
-
+                if(snapshot.child(s1).child("username").getValue()!=null)
+                    Name=snapshot.child(s1).child("username").getValue().toString();
+                if(snapshot.child(s1).child("contact").getValue()!=null)
+                    Contact=snapshot.child(s1).child("contact").getValue().toString();
+                if(snapshot.child(s1).child("age").getValue()!=null)
+                    age=snapshot.child(s1).child("age").getValue().toString();
+                if(snapshot.child(s1).child("gender").getValue()!=null)
+                    gender=snapshot.child(s1).child("gender").getValue().toString();
+                if(snapshot.child(s1).child("height").getValue()!=null)
+                    height=snapshot.child(s1).child("height").getValue().toString();
+                if(snapshot.child(s1).child("weight").getValue()!=null)
+                    weight= snapshot.child(s1).child("weight").getValue().toString();
+                if(snapshot.child(s1).child("coronaStatus").getValue()!=null)
+                    corona= snapshot.child(s1).child("coronaStatus").getValue().toString();
+                if(snapshot.child(s1).child("vaccinationStatus").getValue()!=null)
+                    vaccine= snapshot.child(s1).child("vaccinationStatus").getValue().toString();
+                if(snapshot.child(s1).child("symptoms").getValue()!=null)
+                    medhelp= snapshot.child(s1).child("symptoms").getValue().toString();
+                if(snapshot.child(s1).child("contactHistory").getValue()!=null)
+                    cont= snapshot.child(s1).child("contactHistory").getValue().toString();
+                if(snapshot.child(s1).child("healthCondition").getValue()!=null)
+                    mhis= snapshot.child(s1).child("healthCondition").getValue().toString();
+// Toast.makeText(EditProfile.this,Name+Email+ age, Toast.LENGTH_LONG).show();
 
 
             }
