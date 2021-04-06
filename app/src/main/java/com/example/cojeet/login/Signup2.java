@@ -52,7 +52,7 @@ public class Signup2 extends AppCompatActivity {
     Button medsign;
     DBHelper DB;
     RadioGroup gen,cov,vac;
-    String medhelp,gender,Email,Name,Contact, mhis="*",cont,vaccine,corona,loc,age,height,weight,state;
+    String medhelp,gender,Email,Name,Contact, mhis,cont,vaccine,corona,loc,age,height,weight,state;
     CheckBox Fever,Dcough,Chestp,Tiredness,Diarrhoea,Conjectiv,Shortob,Anp,Lossos,Sorethroat,Allergy,Immuno,Preg,Blood,Disease,BP,Fibrosis,h1,h2,h3,h4;
 
     @Override
@@ -67,7 +67,7 @@ public class Signup2 extends AppCompatActivity {
         ref= FirebaseDatabase.getInstance().getReference().child("User_Detail");
         ud=new User_Detail();
 
-        //loc="delhi";
+        loc="delhi";
         s=new States();
         s.init();
 
@@ -92,7 +92,7 @@ public class Signup2 extends AppCompatActivity {
         vac=findViewById(R.id.vaccination);
 
         //Symptom Checkboxes
-////
+
         Fever=findViewById(R.id.cb1);
         Dcough=findViewById(R.id.cb2);
         Tiredness=findViewById(R.id.cb3);
@@ -225,7 +225,7 @@ public class Signup2 extends AppCompatActivity {
             corona=p.getText().toString().trim();
         }
         if(neg.isChecked()){
-            corona=neg.getText().toString().trim();
+            corona=n.getText().toString().trim();
         }
         if (vac.getCheckedRadioButtonId() == -1)
         {
