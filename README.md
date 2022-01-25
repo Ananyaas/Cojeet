@@ -4,10 +4,10 @@
 > - COVID Self Checker
 > - COVID Statistics
 > - Vaccination Statistics
-> - Easy communication to nearest Hospital
+> - Easy communication and route to nearest Hospital in range set by User
 > - COVID News
 > - Edit User Profile
-<!----
+
 <table>
   <tr>
     <td>
@@ -27,6 +27,6 @@
     </td>
 
   </tr>
-</table> ---!>
+</table> 
 
 
